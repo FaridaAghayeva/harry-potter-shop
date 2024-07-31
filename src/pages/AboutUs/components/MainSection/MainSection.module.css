@@ -1,0 +1,23 @@
+.container {
+  background-image: url("//harrypottershop.co.uk/cdn/shop/files/Diagon_Alley_2048x.jpg?v=1614328778");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  padding: 50px;
+  color: #fcf5e7;
+}
+.title {
+  border: 1px solid #fcf5e7;
+  height: 100%;
+}
+.title div {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  padding: 30vh 50%;
+  white-space: nowrap;
+}
+.title div h1 {
+  height: 50px;
+}

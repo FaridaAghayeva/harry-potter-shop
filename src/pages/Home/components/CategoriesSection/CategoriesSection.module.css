@@ -1,0 +1,51 @@
+.container {
+  margin: 50px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 50px;
+}
+.container div {
+  border: 1px solid #fcf5e7;
+}
+
+.wand {
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/files/Wand_static_card_large.jpg?v=1649173708");
+}
+
+.trunk {
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/files/Trunk_card_large.gif?v=1646994755");
+}
+
+.clothing {
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/files/Robe_card_large.gif?v=1646928736");
+}
+.trolley {
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/files/Sweets_static_card_large.jpg?v=1649173724");
+}
+.wand,
+.trunk,
+.clothing,
+.trolley {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  box-shadow: 1px 1px 10px #fcf5e7;
+}
+
+.wand p,
+.trunk p,
+.clothing p,
+.trolley p {
+  font-size: 25px;
+  font-weight: bold;
+  margin: auto;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 150px 0;
+  box-sizing: border-box;
+}

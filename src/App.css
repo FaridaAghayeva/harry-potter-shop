@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Bluu Next";
+  src: url("../src/fonts/bluunext/BluuNext-Bold.otf") format("otf"),
+    url("../src/fonts/bluunext/BluuNext-Bolditalic.otf") format("otf"),
+    url("../src/fonts/bluunext/BluuNext-Titling.otf") format("otf");
+  /* Add additional font formats if necessary */
+  /* Specify the correct path to the font files */
+}
+
+body {
+  font-family: "Bluu Next";
+  background-color: black;
+}
+
+* {
+  margin: 0;
+}

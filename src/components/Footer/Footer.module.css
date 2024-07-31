@@ -1,0 +1,132 @@
+* {
+  text-decoration: none;
+  color: #fcf5e7;
+}
+
+.container {
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/footer-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 100px;
+  overflow: hidden;
+}
+.liItems {
+  display: flex;
+  flex-direction: row;
+  gap: 15%;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+.about h2,
+.customer h2 {
+  padding-bottom: 20px;
+  font-size: 25px;
+}
+
+.customer {
+  display: flex;
+  flex-direction: column;
+}
+
+.customer a {
+  padding-bottom: 20px;
+}
+
+.signUpContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.button {
+  color: #fcf5e7;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-color: #0000;
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/btn_small_bg.svg");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  border: none;
+  height: 28px;
+  font-family: bluu_nextbold, Crimson Text, serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4em;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #fcf5e7;
+  position: relative;
+  margin: 0 40px;
+  padding: 10px 15px;
+}
+
+.button:after {
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/btn_small_right.svg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  width: 20px;
+  height: 48px;
+  right: -20px;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+}
+
+.button:before {
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/btn_small_left.svg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  width: 35px;
+  height: 48px;
+  left: -25px;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+}
+
+.cardsText {
+  display: flex;
+  margin: auto;
+  text-align: center;
+  width: 500px;
+  padding-top: 50px;
+}
+
+@media (max-width: 800px) {
+  .liItems {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+  }
+  .signUpContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .button {
+    width: fit-content;
+    margin: auto;
+  }
+  .cardsText {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: auto;
+    text-align: center; 
+    width: fit-content;
+  }
+}
