@@ -71,17 +71,7 @@ export default function Navbar() {
             >
               <span>About Us</span>
             </NavLink>
-            <span>
-              <img src="https://harrypottershop.co.uk/cdn/shop/t/22/assets/dot.svg" />
-            </span>
-            <NavLink
-              to="/blogs"
-              style={({ isActive }) => {
-                return isActive ? { color: "#a85" } : {};
-              }}
-            >
-              <span>Blogs</span>
-            </NavLink>
+
             <span>
               <img src="https://harrypottershop.co.uk/cdn/shop/t/22/assets/dot.svg" />
             </span>
