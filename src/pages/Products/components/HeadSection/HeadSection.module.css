@@ -1,0 +1,66 @@
+.container {
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/collections/Best_Sellers_2048x_546ceb6c-33a4-44e0-afed-4442e3727de1_2048x.jpg?v=1714578495");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  box-sizing: border-box;
+  padding: 30px;
+}
+.border {
+  box-sizing: border-box;
+  border: 1px solid #a85;
+  height: 100%;
+  width: 100%;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  text-align: right;
+  width: 500px;
+  gap: 20px;
+  height: 300px;
+  margin: 70px 40px;
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, 0);
+}
+.title {
+  font-size: 60px;
+}
+
+.text {
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  line-height: 30px;
+  font-weight: bold;
+}
+.textContainerResp {
+  display: none;
+}
+@media (max-width: 800px) {
+  .textContainer {
+    display: none;
+  }
+  .textContainerResp {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 100px 50px;
+    gap: 20px;
+  }
+  .titleResp {
+    font-size: 60px;
+  }
+
+  .textResp {
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    line-height: 30px;
+    font-weight: bold;
+  }
+}

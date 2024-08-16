@@ -8,6 +8,8 @@ import Products from "../src/pages/Products/Products";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import ScrollButton from "./components/ScrollButton/ScrollButton";
+import Cart from "./pages/Cart/Cart";
+import ProductSingle from "./pages/Products/ProductSingle/ProductSingle";
 function App() {
   return (
     <>
@@ -19,6 +21,8 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<ProductSingle />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
         <ScrollButton />
         <Footer />

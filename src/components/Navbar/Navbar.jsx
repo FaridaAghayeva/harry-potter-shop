@@ -35,7 +35,6 @@ export default function Navbar() {
           <div className={style.warnerbrosIcon}></div>
           <div className={style.logo}>
             <NavLink to="/">
-              {" "}
               <img src="https://harrypottershop.co.uk/cdn/shop/t/22/assets/logo_hpshop.svg" />
             </NavLink>
           </div>
@@ -44,7 +43,9 @@ export default function Navbar() {
               <div className={style.wishlist}></div>
               <span className={style.wishlistText}>Wishlist</span>
             </div>
-            <div className={style.basket}></div>
+            <NavLink to="/cart">
+              <div className={style.basket}></div>
+            </NavLink>
           </div>
         </div>
         <div className={style.items}>
