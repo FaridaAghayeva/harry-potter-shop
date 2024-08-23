@@ -15,8 +15,8 @@ export default function Navbar() {
           <img src="https://harrypottershop.co.uk/cdn/shop/t/22/assets/hp_fan_club_logo_horizontal_dark.svg?v=31198702805312198181678387973" />
         </div>
         <div className={style.loginContainer}>
-          <NavLink>Login</NavLink>
-          <NavLink>Registration</NavLink>
+          <NavLink to="/login">Login</NavLink>
+          <NavLink to="register">Registration</NavLink>
           <img
             className={style.sun}
             src="https://harrypottershop.co.uk/cdn/shop/t/22/assets/sun_2x.png"

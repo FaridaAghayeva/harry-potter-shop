@@ -10,6 +10,8 @@ import Footer from "./components/Footer/Footer";
 import ScrollButton from "./components/ScrollButton/ScrollButton";
 import Cart from "./pages/Cart/Cart";
 import ProductSingle from "./pages/Products/ProductSingle/ProductSingle";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
 function App() {
   return (
     <>
@@ -23,6 +25,8 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<ProductSingle />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
         <ScrollButton />
         <Footer />

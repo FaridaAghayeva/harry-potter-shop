@@ -1,0 +1,28 @@
+.container {
+  background-image: url("https://www.wizardingworld.com/assets/_next/static/images/bg@2x-615807669b89ca41d9cbee545542b954.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+.register {
+  width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+}
+.back {
+  background-image: url("https://www.wizardingworld.com/images/icons/back-24px-13px.svg");
+  background-size: cover;
+
+  height: 24px;
+  width: 13px;
+  margin: 10px;
+}
