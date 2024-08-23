@@ -4,6 +4,7 @@ import { fetchProducts } from "../../../../components/redux/productsSlicer";
 import Loader from "../../../../components/Loader/Loader";
 import Product from "../Product/Product";
 import style from "../ProductsAll/ProductsAll.module.css";
+import ToggleFilterMenu from "./ToggleFilterMenu/ToggleFilterMenu";
 
 export default function FilterSection() {
   const dispatch = useDispatch();
@@ -13,11 +14,16 @@ export default function FilterSection() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [visible, setVisible] = useState(10);
   const [sortOption, setSortOption] = useState("asc");
+  const [searchItem, setSearchItem] = useState("");
+  const [isVisible, setIsVisible] = useState(false);
+  const [error, setError] = useState("");
 
   function showMoreItems() {
     setVisible((prevValue) => prevValue + 3);
   }
-
+  const displayFilters = (e) => {
+    setIsVisible(!isVisible);
+  };
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
@@ -36,6 +42,16 @@ export default function FilterSection() {
 
   useEffect(() => {
     let filtered = [...(data?.products?.data || [])];
+
+    if (searchItem) {
+      filtered = filtered.filter((product) =>
+        product.title.toLowerCase().includes(searchItem.toLowerCase())
+      );
+      if (!filtered) {
+        setError(<p>No result found for {searchItem} </p>);
+      }
+    }
+
     if (selectedCategories.length > 0) {
       filtered = filtered.filter((product) =>
         product?.categories?.some((category) =>
@@ -43,6 +59,7 @@ export default function FilterSection() {
         )
       );
     }
+
     if (sortOption) {
       filtered = filtered.slice().sort((a, b) => {
         switch (sortOption) {
@@ -59,8 +76,9 @@ export default function FilterSection() {
         }
       });
     }
+
     setFilteredProducts(filtered);
-  }, [selectedCategories, data.products, sortOption]);
+  }, [selectedCategories, data.products, sortOption, searchItem]);
 
   const handleCategoryChange = (e) => {
     const { value, checked } = e.target;
@@ -73,13 +91,49 @@ export default function FilterSection() {
     setSortOption(e.target.value);
   };
 
+  const handleInputChange = (e) => {
+    setSearchItem(e.target.value);
+  };
+
   return (
     <div>
       {data.isLoading ? (
         <Loader />
       ) : (
         <div className={style.productsContainer}>
+          <div className={style.toggle}>
+            {isVisible ? (
+              <ToggleFilterMenu
+                displayFilters={displayFilters}
+                searchItem={searchItem}
+                handleInputChange={handleInputChange}
+                handleSortChange={handleSortChange}
+                handleCategoryChange={handleCategoryChange}
+                sortOption={sortOption}
+                uniqueCategories={uniqueCategories}
+              />
+            ) : (
+              <div className={style.toggleContainer}>
+                <div className={style.toggleFilterBtn} onClick={displayFilters}>
+                  Show Filters
+                </div>
+                <span className={style.collection__total}>
+                  {data?.products?.data?.length} Products
+                </span>
+              </div>
+            )}
+          </div>
+
           <div className={style.sortingAndFiltering}>
+            <div>
+              <input
+                type="text"
+                value={searchItem}
+                onChange={handleInputChange}
+                placeholder="Type to search"
+                className={style.searctInput}
+              />
+            </div>
             <div className={style.sortContainer}>
               <h1>Sort By</h1>
               <div className={style.sorts}>
@@ -141,7 +195,7 @@ export default function FilterSection() {
               ))}
             </div>
           </div>
-          <div className={style.all}>
+          <div className={isVisible ? style.allSpecial : style.all}>
             {filteredProducts?.slice(0, visible).map((product, i) => (
               <Product
                 key={i}
@@ -152,6 +206,7 @@ export default function FilterSection() {
                 id={product.id}
               />
             ))}
+            {error}
           </div>
         </div>
       )}

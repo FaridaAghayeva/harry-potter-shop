@@ -50,13 +50,12 @@
     flex-direction: column;
     text-align: center;
     box-sizing: border-box;
-    padding: 100px 50px;
+    padding: 50px;
     gap: 20px;
   }
   .titleResp {
     font-size: 60px;
   }
-
   .textResp {
     font-size: 20px;
     letter-spacing: 0.5px;
