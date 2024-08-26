@@ -1,0 +1,50 @@
+.newInTitle {
+    display: flex;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+    padding-bottom: 50px;
+  }
+  .containerNewIns {
+    padding: 50px 0;
+  }
+  
+  .newInTitle:before {
+    content: "";
+    background-color: #fcf5e7;
+    width: calc(50% - 140px);
+    height: 3px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate3d(0, -50%, 0);
+    -webkit-mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/brown-line.svg");
+    mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/brown-line.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+  .newInTitle:after {
+    content: "";
+    background-color: #fcf5e7;
+    width: calc(50% - 140px);
+    height: 3px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate3d(0, -50%, 0);
+    -webkit-mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/brown-line.svg");
+    mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/brown-line.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+  .newInTitle:before,
+  .newInTitle:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  

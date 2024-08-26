@@ -3,26 +3,239 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100%;
+  min-height: 100vh;
 }
 
 .register {
-  width: 500px;
+  width: 400px;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 50px;
 }
+
 .logo {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  align-items: center;
+  width: 100%;
 }
+
 .back {
   background-image: url("https://www.wizardingworld.com/images/icons/back-24px-13px.svg");
   background-size: cover;
-
   height: 24px;
   width: 13px;
   margin: 10px;
+  display: flex;
+}
+
+.signUpContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+}
+
+.signUp {
+  font-family: Bluu Next, -serif;
+  display: flex;
+  font-weight: bold;
+  font-size: 50px;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.hrs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+}
+
+.sign {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+}
+
+.hrs::before {
+  content: "";
+  background-color: #fcf5e7;
+  height: 3px;
+  width: 25%;
+  position: absolute;
+  left: 0;
+  mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/brown-line.svg");
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+.hrs::after {
+  content: "";
+  background-color: #fcf5e7;
+  width: 25%;
+  height: 3px;
+  position: absolute;
+  transform: rotate(180deg);
+  right: 0;
+  mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/brown-line.svg");
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+.edges {
+  width: 32px;
+  height: 16px;
+  background: url("	https://www.wizardingworld.com/images/icons/diamonds.svg")
+    no-repeat;
+  background-size: contain;
+  margin: 0 10px;
+}
+
+.edges {
+  width: 32px;
+  height: 16px;
+  background: url("	https://www.wizardingworld.com/images/icons/diamonds.svg")
+    no-repeat;
+  background-size: contain;
+  margin: 0 10px;
+}
+
+.enjoyText {
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  font-family: Sofia Pro, Helvetica, ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3,
+    Hiragino Kaku Gothic Pro, Osaka, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo,
+    ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯, MS PGothic, sans-serif;
+}
+.enjoyText p {
+  color: #d2d3db;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+.inputContainer label {
+  font-family: Sofia Pro, Helvetica, ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3,
+    Hiragino Kaku Gothic Pro, Osaka, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo,
+    ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯, MS PGothic, sans-serif;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 20px 0 12px;
+  display: block;
+  font-weight: 800;
+}
+.username,
+.password,
+.email {
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 16px 21px;
+  margin: 8px 0;
+  border: 1px solid #696b78;
+  border-radius: 3px;
+  background-color: rgba(28, 30, 40, 0.5);
+  font-family: Sofia Pro, Helvetica, ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3,
+    Hiragino Kaku Gothic Pro, Osaka, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo,
+    ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯, MS PGothic, sans-serif;
+  line-height: 24px;
+  color: #fff;
+  min-height: 58px;
+  transition: border 0.3s ease-in-out;
+}
+
+.signUpBtn {
+  margin: 20px 0;
+  color: #fff;
+  background: #6b63b5;
+  border: 1px solid transparent;
+  padding: 13px 0;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 50px;
+  font-family: Sofia Pro, Helvetica, ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3,
+    Hiragino Kaku Gothic Pro, Osaka, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo,
+    ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯, MS PGothic, sans-serif;
+  transition: 0.3s all;
+}
+.signUpBtn:hover {
+  background: #554e8f;
+}
+.flag1,
+.flag2 {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  transition: 0.3s all;
+}
+
+.anAccount {
+  display: flex;
+  justify-content: center;
+  font-weight: thin;
+  padding-bottom: 20px;
+}
+.logInBtn {
+  width: 100%;
+  margin-bottom: 20px;
+  color: #fff;
+  background: transparent;
+  border: 1px solid #fff;
+  padding: 13px 0;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 50px;
+  font-family: Sofia Pro, Helvetica, ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3,
+    Hiragino Kaku Gothic Pro, Osaka, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo,
+    ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯, MS PGothic, sans-serif;
+  transition: 0.3s all;
+}
+.logInBtn:hover {
+  background-color: white;
+  color: black;
+}
+.flags {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  font-size: 30px;
+  padding-bottom: 100px;
+  box-sizing: border-box;
+}
+.flag1:hover,
+.flag2:hover {
+  font-size: 35px;
+  box-sizing: border-box;
+}
+.flag1 .selected,
+.flag2 .selected {
+  font-size: 35px;
 }

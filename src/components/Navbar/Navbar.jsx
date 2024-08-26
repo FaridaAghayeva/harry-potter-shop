@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import style from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 import ToggleMenu from "./ToggleMenu/ToggleMenu";
+import { useCart } from "react-use-cart";
+import { useWishlist } from "react-use-wishlist";
 
 export default function Navbar() {
   const [isVisible, setVisible] = useState(false);
   function displayToggleMenu() {
     setVisible(!isVisible);
   }
+  const { totalUniqueItems } = useCart();
+  const { totalWishlistItems } = useWishlist();
   return (
     <div className={style.container}>
       <div className={style.loginPart}>
@@ -39,13 +43,25 @@ export default function Navbar() {
             </NavLink>
           </div>
           <div className={style.cart}>
-            <div className={style.wishlistcart}>
-              <div className={style.wishlist}></div>
-              <span className={style.wishlistText}>Wishlist</span>
-            </div>
-            <NavLink to="/cart">
-              <div className={style.basket}></div>
+            <NavLink to="/wishlist">
+              <div className={style.wishlistcart}>
+                <div className={style.wishlistContainer}>
+                  <div className={style.totalWishlist}>
+                    {totalWishlistItems !== 0 ? totalWishlistItems : 0}
+                  </div>
+                  <div className={style.wishlist}></div>
+                </div>
+                <span className={style.wishlistText}>Wishlist</span>
+              </div>
             </NavLink>
+            <div className={style.cartContainer}>
+              <NavLink to="/cart">
+                <div className={style.totalCart}>
+                  {totalUniqueItems !== 0 ? totalUniqueItems : 0}
+                </div>
+                <div className={style.basket}></div>
+              </NavLink>
+            </div>
           </div>
         </div>
         <div className={style.items}>
@@ -82,7 +98,7 @@ export default function Navbar() {
                 return isActive ? { color: "#a85" } : {};
               }}
             >
-              <span>Products</span>
+              <span>Shop</span>
             </NavLink>
             <span>
               <img src="https://harrypottershop.co.uk/cdn/shop/t/22/assets/dot.svg" />

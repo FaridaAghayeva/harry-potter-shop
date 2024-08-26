@@ -1,0 +1,13 @@
+.swiper-button-next {
+  color: white !important; /* Change the color to white */
+}
+
+.swiper-button-prev {
+  color: white !important; 
+}
+
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #ccc !important;
+}

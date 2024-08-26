@@ -1,0 +1,34 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #10141b;
+  flex-direction: column;
+  padding: 100px 0;
+}
+
+.container h1 {
+  font-size: 40px;
+  padding: 30px;
+}
+.container p {
+  font-size: 25px;
+  padding-bottom: 20px;
+}
+.backToHomeBtn {
+  width: fit-content;
+  padding: 18px 31px;
+  text-transform: uppercase;
+  background-color: #faf6f0;
+
+  box-shadow: inset 0 0 0 1px #10141b;
+  display: flex;
+  margin: auto;
+  border-radius: 50px;
+}
+.backToHomeBtn a {
+  color: #10141b;
+  font-weight: bold;
+}

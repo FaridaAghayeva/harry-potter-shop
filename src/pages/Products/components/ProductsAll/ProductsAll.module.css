@@ -14,8 +14,9 @@
 }
 .image {
   border: 1px solid #a85;
-  height: 350px;
+  height: 300px;
   width: 250px;
+  position: relative;
 }
 .image img {
   box-sizing: border-box;
@@ -52,6 +53,7 @@
   height: 30px;
 }
 .btn {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,7 +151,6 @@
   font-family: bluu_nextbold, Crimson Text, serif;
   font-weight: 600;
   text-decoration: none;
-
   position: relative;
   box-sizing: border-box;
 }
@@ -236,9 +237,22 @@
 
 .toggle {
   display: none;
-  
 }
-
+.heart {
+  display: flex;
+  float: right;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+}
+.heartNotFull {
+  font-size: 40px;
+  padding: 15px;
+}
+.heartFull {
+  font-size: 30px;
+  margin: 20px;
+}
 @media (max-width: 800px) {
   .sortingAndFiltering {
     display: none;

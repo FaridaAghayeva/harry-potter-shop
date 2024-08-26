@@ -11,7 +11,16 @@ import "swiper/css/thumbs";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import ReadMore from "../../../components/ReadMoreLessButton/ReadMore";
 import "./style.css";
+import { useCart } from "react-use-cart";
+import { NavLink } from "react-router-dom";
+import { CiHeart } from "react-icons/ci";
+import { FaHeart } from "react-icons/fa";
+import { useWishlist } from "react-use-wishlist";
+
 export default function ProductSingle() {
+  const { addItem } = useCart();
+  const { addWishlistItem, removeWishlistItem, inWishlist } = useWishlist();
+  const [wishlistBtn, setWishlistBtn] = useState(false);
   const dispatch = useDispatch();
   const data = useSelector((state) => state);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -20,9 +29,27 @@ export default function ProductSingle() {
   const product = data?.products?.data.find(
     (product) => product.id === productId
   );
+
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
+    if (!data || data.length === 0) {
+      dispatch(fetchProducts());
+    }
+  }, [dispatch, data]);
+
+  useEffect(() => {
+    if (product) {
+      setWishlistBtn(inWishlist(productId));
+    }
+  }, [inWishlist, productId, product]);
+
+  const toggleWishlist = () => {
+    if (wishlistBtn) {
+      removeWishlistItem(productId);
+    } else {
+      addWishlistItem(product);
+    }
+    setWishlistBtn(!wishlistBtn);
+  };
   return (
     <div>
       <div className={style.container}>
@@ -58,7 +85,11 @@ export default function ProductSingle() {
               {product?.images?.map((item) => {
                 return (
                   <SwiperSlide key={product.id}>
-                    <img src={item} className={style.image} />
+                    <img
+                      src={item}
+                      className={style.image}
+                      alt={product.title}
+                    />
                   </SwiperSlide>
                 );
               })}
@@ -66,12 +97,29 @@ export default function ProductSingle() {
           </Swiper>
         </div>
         <div className={style.detailsContainer}>
+          <div>
+            <div className={style.heart} onClick={toggleWishlist}>
+              {wishlistBtn ? (
+                <div>
+                  <p>Remove from Wishlist</p>
+                  <FaHeart className={style.heartFull} />
+                </div>
+              ) : (
+                <div>
+                  <p>Add to Wishlist</p>
+                  <CiHeart className={style.heartNotFull} />
+                </div>
+              )}
+            </div>
+          </div>
           <h1 className={style.title}>{product?.title}</h1>
           <hr></hr>
           <h1 className={style.price}>{product?.price}.00 AZN</h1>
           <hr></hr>
           <div>
-            <div className={style.btn}>ADD TO CART</div>
+            <div className={style.btn} onClick={() => addItem(product)}>
+              ADD TO CART
+            </div>
           </div>
           <hr></hr>
           <div></div>
