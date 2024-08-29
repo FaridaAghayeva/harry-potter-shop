@@ -8,11 +8,12 @@
   background-position: 50% calc(100% - 170px);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
+  height: 100vh;
   z-index: 999;
   position: fixed;
   padding-top: 50px;
   gap: 70px;
+  /* top: 0; */
 }
 
 .liItems {
@@ -57,7 +58,6 @@
   height: 33px;
   margin: 35px;
   padding: 10px;
-  font-family: bluu_nextbold, Crimson Text, serif;
   font-size: 15px;
   font-weight: 600;
   line-height: 1.4em;
@@ -71,7 +71,7 @@
   text-transform: uppercase;
   text-align: center;
   color: #fcf5e7;
-  font-family: bluu_nextbold, Crimson Text, serif;
+
   font-weight: 600;
   text-decoration: none;
   display: inline-block;

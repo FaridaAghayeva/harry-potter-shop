@@ -1,21 +1,21 @@
-@font-face {
-  font-family: "Bluu Next";
-  src: url("../src/fonts/bluunext/BluuNext-Bold.otf") format("otf"),
-    url("../src/fonts/bluunext/BluuNext-Bolditalic.otf") format("otf"),
-    url("../src/fonts/bluunext/BluuNext-Titling.otf") format("otf");
-}
-
-body {
-  font-family: "Bluu Next";
-}
-
 .container {
   display: flex;
   flex-direction: column;
+  z-index: 999;
+  position:  sticky;
+  width: 100%;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+}
+.sticky {
+ 
+  width: 100%;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 a {
   text-decoration: none;
-  color: white;
 }
 .loginPart {
   display: flex;
@@ -28,6 +28,9 @@ a {
 }
 .wishlistContainer {
   position: relative;
+}
+.userIcon {
+  font-size: 25px;
 }
 .totalWishlist {
   position: absolute;
@@ -169,7 +172,7 @@ a {
 .loginContainer a {
   text-decoration: underline;
 }
-.toggeIcon {
+.toggleIcon {
   pointer-events: none;
   background-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/burger.svg");
   background-position: center;
@@ -185,7 +188,7 @@ a {
   width: 46px;
   height: 46px;
 }
-.toggeIconContainer {
+.toggleIconContainer {
   display: none;
 }
 @media (max-width: 1320px) {
@@ -217,6 +220,9 @@ a {
   .logos {
     padding: 50px 0 0 0;
   }
+  .userIcon {
+    display: none;
+  }
 }
 
 @media (max-width: 835px) {
@@ -229,7 +235,7 @@ a {
   .warnerbrosIcon {
     display: none;
   }
-  .toggeIconContainer {
+  .toggleIconContainer {
     display: block;
     width: 200px;
   }

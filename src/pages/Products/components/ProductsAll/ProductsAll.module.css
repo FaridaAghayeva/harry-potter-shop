@@ -74,7 +74,7 @@
   margin: auto;
   width: 150px;
   padding: 10px 15px;
-  font-family: bluu_nextbold, Crimson Text, serif;
+ 
   position: relative;
 }
 .btn:after {
@@ -139,7 +139,7 @@
   height: 46px;
   margin: 0 26px;
   padding: 10px;
-  font-family: bluu_nextbold, Crimson Text, serif;
+ 
   font-size: 19px;
   font-weight: 600;
   line-height: 1.4em;
@@ -148,7 +148,7 @@
   text-transform: uppercase;
   text-align: center;
   color: #fcf5e7;
-  font-family: bluu_nextbold, Crimson Text, serif;
+ 
   font-weight: 600;
   text-decoration: none;
   position: relative;
@@ -324,7 +324,7 @@
     align-items: center;
     width: 150px;
     padding: 10px 15px;
-    font-family: bluu_nextbold, Crimson Text, serif;
+   
     position: relative;
   }
   .toggleFilterBtn:after {

@@ -1,7 +1,14 @@
-import React from 'react'
+import React from "react";
 
 export default function Profile() {
   return (
-    <div>Profile</div>
-  )
+    <div
+      onClick={() => {
+        localStorage.removeItem("data");
+        window.location.reload();
+      }}
+    >
+      logout
+    </div>
+  );
 }

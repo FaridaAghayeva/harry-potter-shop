@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import style from "../ToggleMenu/ToggleMenu.module.css";
+import { FaUser } from "react-icons/fa";
 export default function ToggleMenu({ isVisible, setVisible }) {
   function clickPage() {
     setVisible(!isVisible);
@@ -28,12 +29,17 @@ export default function ToggleMenu({ isVisible, setVisible }) {
           <span>Contact Us</span>
         </NavLink>
         <hr></hr>
-        <NavLink>
+        <NavLink to="/wishlist">
           <div className={style.wishlistcart}>
             <div className={style.wishlist} onClick={clickPage}></div>
             <span className={style.wishlistText} onClick={clickPage}>
               Wishlist
             </span>
+          </div>
+        </NavLink>
+        <NavLink to="/profile">
+          <div className={style.userIcon} onClick={clickPage}>
+            <FaUser /> Profile
           </div>
         </NavLink>
       </div>
@@ -42,7 +48,9 @@ export default function ToggleMenu({ isVisible, setVisible }) {
           <img src="https://harrypottershop.co.uk/cdn/shop/t/22/assets/logo_hp_fan_club.png?v=181701325036633612841678387974" />
         </div>
         <div className={`${style.loginBtn} ${style.btn}`} onClick={clickPage}>
-          <span>LOGIN</span>
+          <NavLink to="/login">
+            <span>LOGIN</span>
+          </NavLink>
         </div>
       </div>
     </div>

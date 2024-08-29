@@ -1,9 +1,49 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import style from "../Login/Login.module.css";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
+import { UserContext } from "../../components/ContextAPIs/Users/UserContext";
 
 export default function Login() {
+  const { users } = useContext(UserContext);
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [items, setItems] = useState([]);
+  const navigate = useNavigate();
+  // useEffect(() => {
+  //   const items = JSON.parse(localStorage.getItem("items"));
+  //   if (items) {
+  //     setItems(items);
+  //   }
+  // }, []);
+  // console.log(users.)
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const user = users.find(
+        (item) =>
+          item.email === formData.email && item.password === formData.password
+      );
+      if (user) {
+        localStorage.setItem("data", JSON.stringify(user));
+        navigate("/");
+       
+      }
+    } catch (error) {
+      console.error("Login failed:", error);
+    }
+  };
+
   return (
     <div className={style.container}>
       <div className={style.register}>
@@ -25,26 +65,33 @@ export default function Login() {
           </div>
         </div>
 
-        <form className={style.form}>
+        <form className={style.form} onSubmit={handleSubmit}>
           <div className={style.inputContainer}>
             <label htmlFor="email">EMAIL ADDRESS</label>
             <input
-              type="text"
+              type="email"
+              value={formData.email}
               name="email"
-              id="email"
+              onChange={handleChange}
+              required
               className={style.email}
             />
           </div>
           <div className={style.inputContainer}>
             <label htmlFor="password">PASSWORD</label>
             <input
-              type="text"
+              type="password"
+              value={formData.password}
               name="password"
-              id="password"
+              onChange={handleChange}
+              required
               className={style.password}
             />
           </div>
-          <di className={style.logInBtn}>Log In</di>
+          <button type="submit" className={style.logInBtn}>
+            Log In
+          </button>
+          {/* {error && <p>{error}</p>} */}
           <hr></hr>
           <div>
             <h2 className={style.anAccount}>Don't have an account?</h2>

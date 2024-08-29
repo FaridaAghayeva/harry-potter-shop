@@ -10,18 +10,18 @@ export default function Register() {
     email: "",
     password: "",
   });
-  const [error, setError] = useState([
-    {
-      emailError: false,
-      passwordError: false,
-    },
-  ]);
-  const [validation, setValidation] = useState([
-    {
-      isValidEmil: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-      isValidPassword: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/,
-    },
-  ]);
+  // const [error, setError] = useState([
+  //   {
+  //     emailError: false,
+  //     passwordError: false,
+  //   },
+  // ]);
+  // const [validation, setValidation] = useState([
+  //   {
+  //     isValidEmil: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+  //     isValidPassword: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/,
+  //   },
+  // ]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,26 +40,30 @@ export default function Register() {
 
   const registerUser = async () => {
     try {
-      if (
-        validation.isValidEmil.test(
-          String(formdata.email).toLowerCase().trim()
-        ) &&
-        validation.isValidPassword.test(
-          String(formdata.password).toLowerCase().trim()
-        )
-      ) {
-        const { error } = await supabase.from("users").insert({
-          username: formdata.username,
-          email: formdata.email,
-          password: formdata.password,
-        });
-      } else {
-        setError(!error.emailError);
-        setError(!error.emailError);
-      }
-      const validEmail = validation.isValidEmil;
+      // if (
+      //   validation.isValidEmil.test(
+      //     String(formdata.email).toLowerCase().trim()
+      //   ) &&
+      //   validation.isValidPassword.test(
+      //     String(formdata.password).toLowerCase().trim()
+      //   )
+      // ) {
+      //   const { error } = await supabase.from("users").insert({
+      //     username: formdata.username,
+      //     email: formdata.email,
+      //     password: formdata.password,
+      //   });
+      // } else {
+      //   setError(!error.emailError);
+      //   setError(!error.emailError);
+      // }
+      // const validEmail = validation.isValidEmil;
       // const hashedPassword = await hashPassword(formdata.password);
-
+      const { error } = await supabase.from("users").insert({
+        username: formdata.username,
+        email: formdata.email,
+        password: formdata.password,
+      });
       if (error) {
         console.error("Error inserting user:", error);
       } else {
@@ -127,7 +131,7 @@ export default function Register() {
               required
             />
           </div>
-          <div>{error ? "error" : ""}</div>
+          {/* <div>{error ? "error" : ""}</div> */}
           <div className={style.inputContainer}>
             <label htmlFor="password">PASSWORD</label>
             <input

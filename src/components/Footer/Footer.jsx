@@ -30,7 +30,7 @@ export default function Footer() {
           <span>Sign up for news, events & offers</span>
         </div>
         <div className={style.button}>
-          <NavLink to="/sign-up">
+          <NavLink to="/register">
             <span>SIGN UP NOW</span>
           </NavLink>
         </div>

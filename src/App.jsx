@@ -15,6 +15,9 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Wishlist from "./pages/Wishlist/Wishlist";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
+import Profile from "./pages/Profile/Profile";
+// import Dashboard from "./pages/Dashboard/Dashboard";
+// import ProtectedRoute from "./components/Routes/ProtectedRoute";
 
 function App() {
   return (
@@ -47,6 +50,15 @@ function MainLayout() {
         <Route path="*" element={<NotFound />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
+        {/* <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute role="admin">
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        /> */}
       </Routes>
       <ScrollButton />
       <ScrollToTop />

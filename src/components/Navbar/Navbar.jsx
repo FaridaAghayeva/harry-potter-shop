@@ -1,39 +1,70 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import style from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 import ToggleMenu from "./ToggleMenu/ToggleMenu";
 import { useCart } from "react-use-cart";
 import { useWishlist } from "react-use-wishlist";
+import { UserContext } from "../ContextAPIs/Users/UserContext";
+import { FaUser } from "react-icons/fa";
 
 export default function Navbar() {
   const [isVisible, setVisible] = useState(false);
+  const { users } = useContext(UserContext);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [userDetails, setUserDetails] = useState([]);
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("data"));
+    if (data) {
+      setLoggedIn(true);
+      setUserDetails(data);
+    } else {
+      setLoggedIn(false);
+      setUserDetails([]);
+    }
+  }, []);
+
   function displayToggleMenu() {
     setVisible(!isVisible);
   }
+
   const { totalUniqueItems } = useCart();
   const { totalWishlistItems } = useWishlist();
+
   return (
-    <div className={style.container}>
+    <header className={`${style.container}`}>
       <div className={style.loginPart}>
         <div className={style.fanclub}>
           <img src="https://harrypottershop.co.uk/cdn/shop/t/22/assets/hp_fan_club_logo_horizontal_dark.svg?v=31198702805312198181678387973" />
         </div>
+
         <div className={style.loginContainer}>
-          <NavLink to="/login">Login</NavLink>
-          <NavLink to="register">Registration</NavLink>
+          {loggedIn ? (
+            <NavLink to="/profile">Hello, {userDetails.username}</NavLink>
+          ) : (
+            <>
+              <NavLink to="/login">Login</NavLink>
+              <NavLink to="/register">Registration</NavLink>
+            </>
+          )}
+
           <img
             className={style.sun}
             src="https://harrypottershop.co.uk/cdn/shop/t/22/assets/sun_2x.png"
           />
         </div>
       </div>
+
       <div className={style.itemsContainer}>
         <div className={style.logos}>
-          <div onClick={displayToggleMenu} className={style.toggeIconContainer}>
+          <div
+            onClick={displayToggleMenu}
+            className={style.toggleIconContainer}
+          >
             {isVisible ? (
               <div className={style.deleteIcon}></div>
             ) : (
-              <div className={style.toggeIcon}></div>
+              <div className={style.toggleIcon}></div>
             )}
           </div>
           <div className={style.warnerbrosIcon}></div>
@@ -62,6 +93,11 @@ export default function Navbar() {
                 <div className={style.basket}></div>
               </NavLink>
             </div>
+            <NavLink to="/profile">
+              <div className={style.userIcon}>
+                <FaUser />
+              </div>
+            </NavLink>
           </div>
         </div>
         <div className={style.items}>
@@ -125,6 +161,6 @@ export default function Navbar() {
       ) : (
         ""
       )}
-    </div>
+    </header>
   );
 }
