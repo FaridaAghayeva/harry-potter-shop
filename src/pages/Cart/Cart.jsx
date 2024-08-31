@@ -4,8 +4,14 @@ import style from "./Cart.module.css";
 import { NavLink } from "react-router-dom";
 
 export default function Cart() {
-  const { isEmpty, totalUniqueItems, items, updateItemQuantity, removeItem } =
-    useCart();
+  const {
+    isEmpty,
+    totalUniqueItems,
+    items,
+    cartTotal,
+    updateItemQuantity,
+    removeItem,
+  } = useCart();
   if (isEmpty)
     return (
       <div className={style.cartEmptyTextContainer}>
@@ -71,6 +77,16 @@ export default function Cart() {
           </div>
         ))}
       </ul>
+      <div>
+        <div>
+          <h2>Total</h2>
+          <h1>{cartTotal}</h1>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -10,7 +10,7 @@
   background-size: cover;
   height: 100vh;
   z-index: 999;
-  position: fixed;
+  /* position: fixed; */
   padding-top: 50px;
   gap: 70px;
   /* top: 0; */

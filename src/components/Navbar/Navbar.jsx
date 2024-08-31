@@ -78,7 +78,7 @@ export default function Navbar() {
               <div className={style.wishlistcart}>
                 <div className={style.wishlistContainer}>
                   <div className={style.totalWishlist}>
-                    {totalWishlistItems !== 0 ? totalWishlistItems : 0}
+                    <p>{totalWishlistItems !== 0 ? totalWishlistItems : 0}</p>
                   </div>
                   <div className={style.wishlist}></div>
                 </div>
@@ -88,7 +88,7 @@ export default function Navbar() {
             <div className={style.cartContainer}>
               <NavLink to="/cart">
                 <div className={style.totalCart}>
-                  {totalUniqueItems !== 0 ? totalUniqueItems : 0}
+                  <p>{totalUniqueItems !== 0 ? totalUniqueItems : 0}</p>
                 </div>
                 <div className={style.basket}></div>
               </NavLink>
