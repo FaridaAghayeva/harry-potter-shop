@@ -1,5 +1,6 @@
 import React from "react";
 import style from "../CreateTrunk/CreateTrunk.module.css";
+import { NavLink } from "react-router-dom";
 
 export default function CreateTrunk() {
   return (
@@ -16,9 +17,10 @@ export default function CreateTrunk() {
               one-of-a-kind Harry Potter merchandise, handpicked by you.
             </p>
           </div>
-          <div className={style.button}>SHOP NOW</div>
+          <NavLink to="/products">
+            <div className={style.button}>SHOP NOW</div>
+          </NavLink>
         </div>
-       
       </div>
     </div>
   );

@@ -1,89 +1,153 @@
 .hr1 {
-    background-color: #fcf5e7;
-    border: 0;
-    height: 4px;
-    margin: 30px 0;
-    -webkit-mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/brown-line.svg");
-    mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/brown-line.svg");
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-size: cover;
-    mask-size: cover;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-  }
-  
-  .cartContainer {
-    margin: 50px 120px;
-  }
-  .liContainer {
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    align-items: center;
-  }
-  .imgContainer {
-    border: 2px solid #a85;
-    box-sizing: border-box;
-    padding: 20px;
-  }
-  .imgContainer img {
-    width: 250px;
-    background-color: #0f141c;
-  }
-  
-  .detailsContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-  }
-  
-  .title {
-    font-size: 30px;
-  }
-  .details {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .addQuantity {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-  
-    font-size: 30px;
-  }
-  
-  .addButtons {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    font-size: 20px;
-    border: 3px solid #a85;
-    padding: 5px 20px;
-  }
-  
-  .wishRemove {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 30px 0;
-    font-size: 20px;
-  }
-  .cartEmptyTextContainer {
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    padding: 100px 20px;
-    gap: 30px;
-  }
-  .cartEmptyText {
-    font-size: 40px;
-  }
-  .cartEmptyTextContainer h2 {
-    text-decoration: underline;
-  }
-  
+  background-color: #fcf5e7;
+  border: 0;
+  height: 4px;
+  margin: 30px 0;
+  -webkit-mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/brown-line.svg");
+  mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/brown-line.svg");
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.cartContainer {
+  margin: 50px 120px;
+}
+.liContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+}
+.imgContainer {
+  border: 2px solid #a85;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.imgContainer img {
+  width: 250px;
+  background-color: #0f141c;
+}
+
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.title {
+  font-size: 30px;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.addQuantity {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+
+  font-size: 30px;
+}
+
+.addButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  font-size: 20px;
+  border: 3px solid #a85;
+  padding: 5px 20px;
+}
+
+.wishRemove {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px 0;
+  font-size: 20px;
+}
+.cartEmptyTextContainer {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 100px 20px;
+  gap: 30px;
+}
+.cartEmptyText {
+  font-size: 40px;
+}
+.cartEmptyTextContainer h2 {
+  text-decoration: underline;
+}
+
+.checkContainer {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.total {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.total h2 {
+  font-size: 30px;
+}
+
+.checkBtn {
+  display: flex;
+  font-weight: bold;
+  color: #fcf5e7;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-color: #0000;
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/btn_small_bg.svg");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  border: none;
+  height: 21px;
+  margin: 0 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  padding: 10px 15px;
+
+  position: relative;
+}
+.checkBtn:after {
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/btn_small_right.svg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  width: 20px;
+  height: 41px;
+  right: -20px;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+}
+.checkBtn:before {
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/btn_small_left.svg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  width: 21px;
+  height: 41px;
+  left: -20px;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+}

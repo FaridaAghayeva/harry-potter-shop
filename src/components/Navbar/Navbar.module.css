@@ -16,6 +16,7 @@
 a {
   text-decoration: none;
 }
+
 .loginPart {
   display: flex;
   justify-content: space-between;
@@ -28,10 +29,29 @@ a {
 .wishlistContainer {
   position: relative;
 }
+.cartContainer2 {
+  position: relative;
+}
+.wishlistContainer2 {
+  position: relative;
+}
 .userIcon {
+  display: flex;
+  gap: 10px;
   font-size: 25px;
 }
 .totalWishlist {
+  position: absolute;
+  font-size: 17px;
+  color: white;
+  background-color: #a85;
+  border-radius: 50%;
+  right: -10px;
+  bottom: 15px;
+  width: 20px;
+  z-index: 2;
+}
+.totalWishlist2 {
   position: absolute;
   font-size: 17px;
   color: white;
@@ -49,7 +69,7 @@ a {
   background-color: #a85;
   border-radius: 50%;
   right: -10px;
-  bottom: 23px;
+  bottom: 19px;
   width: 20px;
   z-index: 2;
 }
@@ -60,6 +80,29 @@ a {
   align-items: center;
 }
 .totalWishlist p {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+.totalCart2 {
+  position: absolute;
+  font-size: 17px;
+  color: white;
+  background-color: #a85;
+  border-radius: 50%;
+  right: -10px;
+  bottom: 19px;
+  width: 20px;
+  z-index: 2;
+}
+.totalCart2 p {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+.totalWishlist2 p {
   display: flex;
   margin: auto;
   justify-content: center;
@@ -79,12 +122,15 @@ a {
   justify-content: center;
 }
 .logos {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: space-between;
   padding: 50px 100px 0 100px;
   align-items: center;
   text-align: center;
+}
+.cart2 {
+  display: none;
 }
 .warnerbrosIcon {
   background-color: #a85;
@@ -115,11 +161,41 @@ a {
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
 }
+.basket2 {
+  background-color: #fcf5e7;
+  width: 36px;
+  height: 24px;
+  transition: color 0.25s;
+  -webkit-mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/cart.svg");
+  mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/cart.svg");
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
 .toggleMenu {
   display: none;
   transition: 3s all;
+  z-index: 999;
+  height: 0;
 }
 .wishlist {
+  background-color: #fcf5e7;
+  width: 23px;
+  height: 20px;
+  transition: color 0.25s;
+  -webkit-mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/wishlist.svg");
+  mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/wishlist.svg");
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.wishlist2 {
   background-color: #fcf5e7;
   width: 23px;
   height: 20px;
@@ -140,9 +216,13 @@ a {
   display: flex;
   flex-direction: row;
   gap: 50px;
-  width: 200px;
 }
 .wishlistcart {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.wishlistcart2 {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -228,7 +308,8 @@ a {
     width: 100px;
   }
   .logos {
-    padding: 50px 0 0 0;
+    display: flex;
+    padding: 0;
   }
   .userIcon {
     display: none;
@@ -241,20 +322,18 @@ a {
     display: none;
   }
 }
-@media (max-width: 650px) {
-  .warnerbrosIcon {
+@media (max-width: 500px) {
+  .items {
     display: none;
   }
   .toggleIconContainer {
     display: block;
-    width: 200px;
   }
   .wishlistcart {
     display: none;
   }
   .cart {
     display: flex;
-
     justify-content: center;
   }
   .basket {
@@ -265,13 +344,18 @@ a {
     margin: auto;
     float: right;
   }
-  .items {
-    display: none;
-  }
   .loginPart {
     padding: 10px 20px;
   }
   .toggleMenu {
     display: block;
+    width: 300px;
+  }
+  .cart2 {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: right;
+    padding-right: 50px;
   }
 }

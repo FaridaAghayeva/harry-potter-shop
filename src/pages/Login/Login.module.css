@@ -177,7 +177,7 @@
   padding: 13px 0;
   width: 100%;
   text-align: center;
-  font-weight: 600;
+  font-weight: bolder;
   border-radius: 50px;
   font-family: Sofia Pro, Helvetica, ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3,
     Hiragino Kaku Gothic Pro, Osaka, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo,
@@ -201,7 +201,8 @@
   font-weight: thin;
   padding-bottom: 20px;
 }
-.logInBtn {
+
+.signInBtn {
   width: 100%;
   margin-bottom: 20px;
   color: #fff;
@@ -216,7 +217,7 @@
     ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯, MS PGothic, sans-serif;
   transition: 0.3s all;
 }
-.logInBtn:hover {
+.signInBtn:hover {
   background-color: white;
   color: black;
 }

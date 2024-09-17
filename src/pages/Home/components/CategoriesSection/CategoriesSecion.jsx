@@ -6,22 +6,22 @@ export default function CategoriesSecion() {
   return (
     <div className={style.container}>
       <div className={style.wand}>
-        <NavLink>
+        <NavLink to="/products">
           <p>Wand Shop</p>
         </NavLink>
       </div>
       <div className={style.trunk}>
-        <NavLink>
+        <NavLink to="/products">
           <p>Trunk Station</p>
         </NavLink>
       </div>
       <div className={style.clothing}>
-        <NavLink>
+        <NavLink to="/products">
           <p>Clothing Station</p>
         </NavLink>
       </div>
       <div className={style.trolley}>
-        <NavLink>
+        <NavLink to="/products">
           <p>Sweet Trolley</p>
         </NavLink>
       </div>

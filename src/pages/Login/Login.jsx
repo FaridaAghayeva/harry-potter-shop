@@ -3,6 +3,7 @@ import style from "../Login/Login.module.css";
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import { UserContext } from "../../components/ContextAPIs/Users/UserContext";
+import { useCookies } from "react-cookie";
 
 export default function Login() {
   const { users } = useContext(UserContext);
@@ -12,13 +13,7 @@ export default function Login() {
   });
   const [items, setItems] = useState([]);
   const navigate = useNavigate();
-  // useEffect(() => {
-  //   const items = JSON.parse(localStorage.getItem("items"));
-  //   if (items) {
-  //     setItems(items);
-  //   }
-  // }, []);
-  // console.log(users.)
+  const [cookies, setCookies] = useCookies(["cookie-user"]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,10 +29,12 @@ export default function Login() {
         (item) =>
           item.email === formData.email && item.password === formData.password
       );
-      if (user) {
-        localStorage.setItem("data", JSON.stringify(user));
+      const admin = users.find(
+        (item) => item.email === "adminn@gmail.com" && item.password === "12345"
+      );
+      if (user || admin) {
+        setCookies("cookie-user", user.token);
         navigate("/");
-       
       }
     } catch (error) {
       console.error("Login failed:", error);
@@ -89,7 +86,7 @@ export default function Login() {
             />
           </div>
           <button type="submit" className={style.logInBtn}>
-            Log In
+            LOG IN
           </button>
           {/* {error && <p>{error}</p>} */}
           <hr></hr>
@@ -97,7 +94,7 @@ export default function Login() {
             <h2 className={style.anAccount}>Don't have an account?</h2>
           </div>
           <NavLink to="/register">
-            <div className={style.logInBtn}>SIGN UP</div>
+            <div className={style.signInBtn}>SIGN UP</div>
           </NavLink>
           <div className={style.flags}>
             <span className={`${style.flag1} fi fi-az`}></span>

@@ -8,6 +8,7 @@ import { store } from "./components/redux/store.jsx";
 import { CartProvider } from "react-use-cart";
 import { WishlistProvider } from "react-use-wishlist";
 import { UserProvider } from "./components/ContextAPIs/Users/UserContext.jsx";
+import { ToastContainer } from "react-toastify";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <UserProvider>

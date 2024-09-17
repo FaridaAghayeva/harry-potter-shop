@@ -5,6 +5,7 @@ import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
 import { HeadContext } from "../../../../components/ContextAPIs/HeadHome/HeadHome";
 import style from "../HeadSection/HeadSection.module.css";
+import { NavLink } from "react-router-dom";
 
 export default function HeadSection() {
   const { details } = useContext(HeadContext);
@@ -32,7 +33,9 @@ export default function HeadSection() {
                 <div className={style.textContainer}>
                   <div className={style.title}>{item?.title}</div>
                   <div className={style.text}>{item?.text}</div>
-                  <div className={style.button}>Shop Now</div>
+                  <NavLink to="/products">
+                    <div className={style.button}>Shop Now</div>
+                  </NavLink>
                 </div>
                 <div className={style.textContainer}></div>
               </div>

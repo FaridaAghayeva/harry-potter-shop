@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import { useWishlist } from "react-use-wishlist";
+import { toast } from "react-toastify";
 
 export default function Product({ price, title, image, product, id }) {
   const { addItem } = useCart();
@@ -18,8 +19,10 @@ export default function Product({ price, title, image, product, id }) {
   const toggleWishlist = () => {
     if (wishlistBtn) {
       removeWishlistItem(product.id);
+      toast.warning("Product is removed from wishlist successfully!");
     } else {
       addWishlistItem(product);
+      toast.success("Product is added to wishlist successfully!");
     }
     setWishlistBtn(!wishlistBtn);
   };
@@ -31,7 +34,7 @@ export default function Product({ price, title, image, product, id }) {
           {wishlistBtn ? (
             <FaHeart className={style.heartFull} />
           ) : (
-            <CiHeart className={style.heartNotFull}/>
+            <CiHeart className={style.heartNotFull} />
           )}
         </div>
         {image?.slice(0, 1).map((item, i) => (
@@ -44,7 +47,13 @@ export default function Product({ price, title, image, product, id }) {
         </NavLink>
 
         <p className={style.price}>{`${price}.00 AZN`}</p>
-        <div className={style.btn} onClick={() => addItem(product)}>
+        <div
+          className={style.btn}
+          onClick={() => {
+            addItem(product);
+            toast.success("Product is added to cart successfully!");
+          }}
+        >
           ADD TO CART
         </div>
       </div>

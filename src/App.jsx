@@ -16,6 +16,11 @@ import Wishlist from "./pages/Wishlist/Wishlist";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
+import ThankYou from "./pages/ThankYou/ThankYou";
+import { Bounce, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Dashboard from "./pages/Dashboard/Dashboard";
+
 // import Dashboard from "./pages/Dashboard/Dashboard";
 // import ProtectedRoute from "./components/Routes/ProtectedRoute";
 
@@ -33,11 +38,26 @@ function MainLayout() {
   const location = useLocation();
 
   const hideNavbarFooter =
-    location.pathname === "/register" || location.pathname === "/login";
+    location.pathname === "/register" ||
+    location.pathname === "/login" ||
+    location.pathname === "/thank-you";
 
   return (
     <>
       {!hideNavbarFooter && <Navbar />}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Bounce}
+      />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
@@ -51,14 +71,9 @@ function MainLayout() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
-        {/* <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute role="admin">
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        /> */}
+        <Route path="/thank-you" element={<ThankYou />} />
+        <Route path="/admin-panel" element={<Dashboard />} />
+        
       </Routes>
       <ScrollButton />
       <ScrollToTop />

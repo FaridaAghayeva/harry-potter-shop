@@ -1,30 +1,33 @@
 import React, { useContext, useEffect, useState } from "react";
-import style from "./Navbar.module.css";
+import style from "../ScrolledHeader/ScrolledHeader.module.css";
 import { NavLink } from "react-router-dom";
-import ToggleMenu from "./ToggleMenu/ToggleMenu";
+import ToggleMenu from "../ToggleMenu/ToggleMenu";
 import { useCart } from "react-use-cart";
 import { useWishlist } from "react-use-wishlist";
+import { UserContext } from "../../ContextAPIs/Users/UserContext";
 import { FaUser } from "react-icons/fa";
 import { useCookies } from "react-cookie";
-import { Events } from "react-scroll";
 
-export default function Navbar() {
+export default function ScrolledHeader() {
   const [isVisible, setVisible] = useState(false);
+  const { users } = useContext(UserContext);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [cookie] = useCookies("cookie-user");
-  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("data"));
+    if (data) {
+      setLoggedIn(true);
+      setUserDetails(data);
+    } else {
+      setLoggedIn(false);
+    }
+  }, []);
 
   function displayToggleMenu() {
     setVisible(!isVisible);
   }
-  useEffect(() => {
-    Events.scrollEvent.register("begin", () => setIsSticky(true));
-    Events.scrollEvent.register("end", () => setIsSticky(false));
 
-    return () => {
-      Events.scrollEvent.remove("begin");
-      Events.scrollEvent.remove("end");
-    };
-  }, []);
   const { totalUniqueItems } = useCart();
   const { totalWishlistItems } = useWishlist();
 
@@ -72,26 +75,6 @@ export default function Navbar() {
             ) : (
               <div className={style.toggleIcon}></div>
             )}
-          </div>
-          <div className={style.cart2}>
-            <NavLink to="/wishlist">
-              <div className={style.wishlistcart2}>
-                <div className={style.wishlistContainer2}>
-                  <div className={style.totalWishlist2}>
-                    <p>{totalWishlistItems !== 0 ? totalWishlistItems : 0}</p>
-                  </div>
-                  <div className={style.wishlist2}></div>
-                </div>
-              </div>
-            </NavLink>
-            <div className={style.cartContainer2}>
-              <NavLink to="/cart">
-                <div className={style.totalCart2}>
-                  <p>{totalUniqueItems !== 0 ? totalUniqueItems : 0}</p>
-                </div>
-                <div className={style.basket2}></div>
-              </NavLink>
-            </div>
           </div>
         </div>
         <div className={style.items}>
@@ -172,10 +155,12 @@ export default function Navbar() {
         </div>
       </div>
 
-      {isVisible && (
+      {isVisible ? (
         <div className={style.toggleMenu}>
           <ToggleMenu isVisible={isVisible} setVisible={setVisible} />
         </div>
+      ) : (
+        ""
       )}
     </header>
   );

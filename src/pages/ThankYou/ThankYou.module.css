@@ -1,0 +1,25 @@
+.container {
+  background-image: url("https://www.wizardingworld.com/assets/_next/static/images/bg@2x-615807669b89ca41d9cbee545542b954.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+.textContainer {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 100px 20px;
+  gap: 30px;
+}
+.text {
+  font-size: 40px;
+}
+.textContainer h2 {
+  text-decoration: underline;
+}
+.paddingDiv {
+  padding: 25vh 0;
+}

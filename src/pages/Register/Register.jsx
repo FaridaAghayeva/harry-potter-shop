@@ -3,6 +3,7 @@ import style from "../Register/Register.module.css";
 import { NavLink } from "react-router-dom";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import supabase from "../../supabase";
+import { useCookies } from "react-cookie";
 
 export default function Register() {
   const [formdata, setFormdata] = useState({
@@ -10,19 +11,7 @@ export default function Register() {
     email: "",
     password: "",
   });
-  // const [error, setError] = useState([
-  //   {
-  //     emailError: false,
-  //     passwordError: false,
-  //   },
-  // ]);
-  // const [validation, setValidation] = useState([
-  //   {
-  //     isValidEmil: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-  //     isValidPassword: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/,
-  //   },
-  // ]);
-
+  const [cookies, setCookies] = useCookies(['auth-token']);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormdata({
@@ -31,44 +20,22 @@ export default function Register() {
     });
   };
 
-  // async function hashPassword(plainPassword) {
-  //   const bcrypt = await import("bcryptjs");
-  //   const saltRounds = 10;
-  //   const hashedPassword = await bcrypt.hash(plainPassword, saltRounds);
-  //   return hashedPassword;
-  // }
-
   const registerUser = async () => {
     try {
-      // if (
-      //   validation.isValidEmil.test(
-      //     String(formdata.email).toLowerCase().trim()
-      //   ) &&
-      //   validation.isValidPassword.test(
-      //     String(formdata.password).toLowerCase().trim()
-      //   )
-      // ) {
-      //   const { error } = await supabase.from("users").insert({
-      //     username: formdata.username,
-      //     email: formdata.email,
-      //     password: formdata.password,
-      //   });
-      // } else {
-      //   setError(!error.emailError);
-      //   setError(!error.emailError);
-      // }
-      // const validEmail = validation.isValidEmil;
-      // const hashedPassword = await hashPassword(formdata.password);
+      const token = crypto.randomUUID();
       const { error } = await supabase.from("users").insert({
         username: formdata.username,
         email: formdata.email,
         password: formdata.password,
+        token: token,
       });
       if (error) {
         console.error("Error inserting user:", error);
       } else {
         console.log("User registered successfully");
+        setCookies('auth-token', token, { path: '/' });
       }
+      console.log(cookies)
     } catch (err) {
       console.error("Error hashing password:", err);
     }
