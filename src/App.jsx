@@ -20,6 +20,7 @@ import ThankYou from "./pages/ThankYou/ThankYou";
 import { Bounce, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import EditPage from "./pages/Dashboard/EditPage/EditPage";
 
 // import Dashboard from "./pages/Dashboard/Dashboard";
 // import ProtectedRoute from "./components/Routes/ProtectedRoute";
@@ -38,9 +39,7 @@ function MainLayout() {
   const location = useLocation();
 
   const hideNavbarFooter =
-    location.pathname === "/register" ||
-    location.pathname === "/login" ||
-    location.pathname === "/thank-you";
+    location.pathname === "/register" || location.pathname === "/login";
 
   return (
     <>
@@ -73,7 +72,7 @@ function MainLayout() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/thank-you" element={<ThankYou />} />
         <Route path="/admin-panel" element={<Dashboard />} />
-        
+        <Route path="/edit-product/:id" element={<EditPage />} />
       </Routes>
       <ScrollButton />
       <ScrollToTop />

@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+  padding: 100px 0;
+}
+.itemContainer {
+  display: grid;
+  grid-template-rows: 250px 80px 50px;
+  width: 200px;
+}
+.image {
+  height: 250px;
+  border: 2px solid #a85;
+  position: relative;
+}
+.image img {
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.title p {
+  font-size: 20px;
+  font-weight: bold;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  gap: 30px;
+  font-size: 30px;
+}

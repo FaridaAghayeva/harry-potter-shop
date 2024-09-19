@@ -1,6 +1,7 @@
 import React from "react";
 import style from "../ThankYou/ThankYou.module.css";
 import { NavLink } from "react-router-dom";
+import RecommendedProducts from "../ThankYou/RecommendedProducts/RecommendedProducts";
 
 export default function ThankYou() {
   return (
@@ -11,9 +12,9 @@ export default function ThankYou() {
           <NavLink to="/products">
             <h2>Continue shopping</h2>
           </NavLink>
-          <hr className={style.hr1}></hr>
         </div>
       </div>
+      <RecommendedProducts />
     </div>
   );
 }

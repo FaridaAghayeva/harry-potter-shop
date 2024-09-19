@@ -2,7 +2,10 @@ import React from "react";
 import { WishlistProvider, useWishlist } from "react-use-wishlist";
 import style from "../Wishlist/Wishlist.module.css";
 import { NavLink } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useCart } from "react-use-cart";
 export default function Wishlist() {
+  const { addItem } = useCart();
   const { isWishlistEmpty, totalWishlistItems, items, removeWishlistItem } =
     useWishlist();
 
@@ -29,11 +32,28 @@ export default function Wishlist() {
               className={style.img}
             />
             <div className={style.title}>{item.title}</div>
-            <div
-              className={style.btn}
-              onClick={() => removeWishlistItem(item.id)}
-            >
-              Remove
+            <div className={style.btnContainer}>
+              <div
+                className={style.btn}
+                onClick={() => {
+                  removeWishlistItem(item.id);
+                  toast.warning(
+                    "Product is removed from wishlist successfully!"
+                  );
+                }}
+              >
+                Remove
+              </div>
+              <div
+                onClick={() => {
+                  addItem(item);
+                  toast.success(
+                    "Product is added from wishlist successfully!"
+                  );
+                }}
+              >
+                <div className={style.basket}></div>
+              </div>
             </div>
           </div>
         ))}

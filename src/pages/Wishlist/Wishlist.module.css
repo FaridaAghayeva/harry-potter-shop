@@ -58,6 +58,26 @@
   font-size: 25px;
   font-weight: bold;
 }
+.basket {
+  background-color: #fcf5e7;
+  width: 36px;
+  height: 24px;
+  transition: color 0.25s;
+  -webkit-mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/cart.svg");
+  mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/cart.svg");
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.btnContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+}
 .btn {
   color: #fcf5e7;
   text-transform: uppercase;

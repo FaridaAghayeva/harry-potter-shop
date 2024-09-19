@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import style from "../ToggleMenu/ToggleMenu.module.css";
 import { FaUser } from "react-icons/fa";
 export default function ToggleMenu({ isVisible, setVisible }) {
+  const nodeRef = useRef();
+  const [isOpen, setOpen] = useState(false);
+  const toggleNav = () => setOpen(!isOpen)
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (!nodeRef.current.contains(e.target)) {
+        toggleNav();
+      }
+    };
+    if (isOpen) {
+      document.addEventListener("mousedown", handleOutsideClick);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [isOpen]);
   function clickPage() {
     setVisible(!isVisible);
   }
   return (
-    <div className={style.container}>
+    <div className={style.container} ref={nodeRef}>
       <div className={style.liItems}>
         <NavLink to="/" onClick={clickPage}>
           <span>Home</span>
@@ -29,7 +45,6 @@ export default function ToggleMenu({ isVisible, setVisible }) {
           <span>Contact Us</span>
         </NavLink>
         <hr></hr>
-
         <NavLink to="/profile">
           <div className={style.userIcon} onClick={clickPage}>
             <FaUser /> Profile

@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import supabase from "../../supabase";
 import { useCookies } from "react-cookie";
+import { toast } from "react-toastify";
 
 export default function Register() {
   const [formdata, setFormdata] = useState({
@@ -11,7 +12,7 @@ export default function Register() {
     email: "",
     password: "",
   });
-  const [cookies, setCookies] = useCookies(['auth-token']);
+  const [cookies, setCookies] = useCookies(["auth-token"]);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormdata({
@@ -32,10 +33,10 @@ export default function Register() {
       if (error) {
         console.error("Error inserting user:", error);
       } else {
-        console.log("User registered successfully");
-        setCookies('auth-token', token, { path: '/' });
+        setCookies("auth-token", token, { path: "/" });
+        toast.success("You registered successfully!");
       }
-      console.log(cookies)
+      console.log(cookies);
     } catch (err) {
       console.error("Error hashing password:", err);
     }

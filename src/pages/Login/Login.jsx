@@ -4,6 +4,7 @@ import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import { UserContext } from "../../components/ContextAPIs/Users/UserContext";
 import { useCookies } from "react-cookie";
+import { toast } from "react-toastify";
 
 export default function Login() {
   const { users } = useContext(UserContext);
@@ -35,6 +36,7 @@ export default function Login() {
       if (user || admin) {
         setCookies("cookie-user", user.token);
         navigate("/");
+        toast.success("You signed in successfully!");
       }
     } catch (error) {
       console.error("Login failed:", error);

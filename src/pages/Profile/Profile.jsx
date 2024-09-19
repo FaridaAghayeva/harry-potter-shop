@@ -5,6 +5,8 @@ import { useWishlist } from "react-use-wishlist";
 import style from "../Profile/Profile.module.css";
 import { UserContext } from "../../components/ContextAPIs/Users/UserContext";
 import supabase from "../../supabase";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
 export default function Profile() {
   const [cookie, , removeCookie] = useCookies(["cookie-user"]);
   const { emptyCart } = useCart();
@@ -13,6 +15,7 @@ export default function Profile() {
   const user = users?.find((item) => {
     return item.token === cookie["cookie-user"];
   });
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -55,6 +58,8 @@ export default function Profile() {
     emptyCart();
     emptyWishlist();
     window.location.reload();
+    toast.success("Logged out successfully!");
+    navigate("/");
   };
 
   return (
@@ -89,7 +94,9 @@ export default function Profile() {
             </button>
           </div>
           <div className={style.btnContainer}>
-            <div onClick={handleLogout} className={style.btn}>Log Out</div>
+            <div onClick={handleLogout} className={style.btn}>
+              Log Out
+            </div>
           </div>
         </form>
       </div>

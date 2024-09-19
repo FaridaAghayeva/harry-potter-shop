@@ -7,12 +7,16 @@ import { useWishlist } from "react-use-wishlist";
 import { FaUser } from "react-icons/fa";
 import { useCookies } from "react-cookie";
 import { Events } from "react-scroll";
+import { UserContext } from "../../components/ContextAPIs/Users/UserContext";
 
 export default function Navbar() {
   const [isVisible, setVisible] = useState(false);
   const [cookie] = useCookies("cookie-user");
   const [isSticky, setIsSticky] = useState(false);
-
+  const { users } = useContext(UserContext);
+  const user = users?.find((item) => {
+    return item.token === cookie["cookie-user"];
+  });
   function displayToggleMenu() {
     setVisible(!isVisible);
   }
@@ -39,7 +43,7 @@ export default function Navbar() {
           {cookie["cookie-user"] !== undefined ? (
             <NavLink to="/profile">
               <div className={style.userIcon}>
-                <p>Hello</p>
+                <p>Hello, {user?.username}</p>
                 <FaUser />
               </div>
             </NavLink>
@@ -51,7 +55,7 @@ export default function Navbar() {
           )}
           {cookie["cookie-user"] === "83fd0571-a42b-4ea6-96b5-a940eda115e5" && (
             <NavLink to="/admin-panel">
-              <div>Dashboard</div>
+              <div className={style.dashboard}>Dashboard</div>
             </NavLink>
           )}
           <img

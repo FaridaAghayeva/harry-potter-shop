@@ -178,7 +178,7 @@ a {
 .toggleMenu {
   display: none;
   transition: 3s all;
-  z-index: 999;
+
   height: 0;
 }
 .wishlist {
@@ -261,6 +261,9 @@ a {
 }
 .loginContainer a {
   text-decoration: underline;
+}
+.dashboard {
+  font-size: 25px;
 }
 .toggleIcon {
   pointer-events: none;
