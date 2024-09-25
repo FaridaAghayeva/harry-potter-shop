@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
+import style from "./App.module.css";
 import Home from "../src/pages/Home/Home";
 import AboutUs from "../src/pages/AboutUs/AboutUs";
 import ContactUs from "../src/pages/ContactUs/ContactUs";
@@ -21,9 +22,9 @@ import { Bounce, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import EditPage from "./pages/Dashboard/EditPage/EditPage";
-
-// import Dashboard from "./pages/Dashboard/Dashboard";
-// import ProtectedRoute from "./components/Routes/ProtectedRoute";
+import AddPage from "./pages/Dashboard/AddPage/AddPage";
+import { useContext } from "react";
+import { ThemeContext } from "./components/ContextAPIs/Theme/Theme";
 
 function App() {
   return (
@@ -36,13 +37,14 @@ function App() {
 }
 
 function MainLayout() {
+  const { darkMode, toggleTheme } = useContext(ThemeContext);
   const location = useLocation();
 
   const hideNavbarFooter =
     location.pathname === "/register" || location.pathname === "/login";
 
   return (
-    <>
+    <div className={darkMode === "light" ? style.container2 : style.container}>
       {!hideNavbarFooter && <Navbar />}
       <ToastContainer
         position="top-right"
@@ -73,11 +75,12 @@ function MainLayout() {
         <Route path="/thank-you" element={<ThankYou />} />
         <Route path="/admin-panel" element={<Dashboard />} />
         <Route path="/edit-product/:id" element={<EditPage />} />
+        <Route path="/add-product" element={<AddPage />} />
       </Routes>
       <ScrollButton />
       <ScrollToTop />
       {!hideNavbarFooter && <Footer />}
-    </>
+    </div>
   );
 }
 

@@ -1,0 +1,148 @@
+{
+  "translation": {
+    "header": {
+      "login": "Daxil olun",
+      "registration": "Qeydiyyatdan keçin",
+      "home": "Ana səhifə",
+      "about": "Haqqımızda",
+      "shop": "Mağaza",
+      "contact": "Bizimlə əlaqə"
+    },
+    "home": {
+      "header": {
+        "1": {
+          "title": "Ağ Şokoladlı Qurbağa",
+          "text": "Süd, Qaranlıq və indi Ağ! Sehrbazlıq Dünyasını canlandıran yeni sehrbazlıq təqdim edirik. Bu Ağ Şokolad Qurbağası orijinal Honeydukes qutusunda qablaşdırılır!"
+        },
+        "2": {
+          "title": "Harry Potter Səyahəti",
+          "text": "Sehrbazlar dünyasının sehrli nəqliyyatından ilhamlanan bu eksklüziv Harry Potter Səyahət kolleksiyası ilə getdiyiniz yerdə özünüzlə bir az sehr götürün!"
+        },
+        "3": {
+          "title": "Sayt üzrə 20% Endirim",
+          "text": "Doğum günün mübarək Harry! Harry Potter Fan Club üzvləri indi kassa zamanı BIRTHDAE20 kodunu daxil etməklə saytdakı hər şeyə 20% qənaət edə bilərlər! Üzv deyilsiniz? Bu gün qoşulun!"
+        }
+      },
+      "categories-section": {
+        "1": "Çubuq mağazası",
+        "2": "Magistral stansiya",
+        "3": "Geyim stansiyası",
+        "4": "Şirin arabası"
+      },
+      "trunk-section": {
+        "title": "Öz Baqajınızı Yaradın!",
+        "text": "Mükəmməl hədiyyə üçün gözəl təqdim olunan siz indi öz Hogwarts məktəb baqajınızı yarada və onu öz əlinizlə seçdiyiniz qeyri-adi Harry Potter malları ilə ağzına qədər doldura bilərsiniz."
+      },
+      "new-in": "Yeni Gələnlər"
+    },
+    "footer": {
+      "pages-names": {
+        "about": "Haqqımızda",
+        "customer-service": "Müştəri xidməti",
+        "contact-us": "Bizimlə əlaqə",
+        "FAQs": "FAQs"
+      },
+      "text": {
+        "text1": "Xəbərlər, hadisələr və təkliflər üçün qeydiyyatdan keçin",
+        "text2": "HARRY POTTER, WIZARDING WORLD və əlaqəli ticarət nişanları, simvollar, adlar və işarələr TM və © Warner Bros. Entertainment Inc. Bütün hüquqlar qorunur."
+      }
+    },
+    "about-us": {
+      "headtext": "Haqqımızda",
+      "text1": "Harry Potter Shop bütün sehrbazlıq ehtiyaclarınız üçün rəsmi onlayn mağazadır, Warner Bros. Studio Tour Londondan, Platform 9 ¾-dəki Harry Potter mağazasından və sehrli alış-veriş təcrübəsini təmin edən Harry Potter Nyu-Yorkdan mənzil çeşidləri.",
+      "text2": "Dünyadakı Harry Potter və Fantastic Beasts məhsullarının ən böyük kolleksiyasında pərəstişkarların sevimlilərindən və brend əməkdaşlıqlarından tutmuş eksklüziv dizaynlara və bənzərsiz fərdiləşdirməyə qədər hər şeyi kəşf edin. 1000-dən çox əşya ilə hər bir fanat öz kolleksiyasına əlavə etmək üçün sehrli bir şey tapacaq.",
+      "text3": "Bülletenimizə abunə olmaqla Harry Potter Shop-un ən son xəbərlərindən, eləcə də yeni və eksklüziv məhsul təqdimatlarından xəbərdar olun!",
+      "locations": {
+        "1": "Ən Böyük Harry Potter Dükanı",
+        "2": "Filçin Müsadirə olunmuş Mallar Emporiumu",
+        "3": "Harry Potter mağazası Nyu York",
+        "4": "Platforma 9-da Harry Potter Dükanı"
+      }
+    },
+    "products": {
+      "title": "Bütün Məhsullar",
+      "text": "İstənilən cadugər və ya sehrbazı öz kolleksiyasına əlavə etmək üçün hədiyyə etmək üçün mükəmməl olan sifarişli kolleksiya əşyaları, unikal çubuqlar, suvenirlər, ləzzətli qənnadı məmulatları, fanatların sevimliləri və s. daxil olmaqla ən çox sevilən Harry Potter məhsullarını kəşf edin.",
+      "sort": "Sırala",
+      "filter-by": "Filterlə"
+    },
+    "contact-us": {
+      "text1": "Standart göndərmə ilə edilən sifarişlərin işlənməsi və göndərilməsi 2-3 gün çəkə bilər. Zəhmət olmasa çatdırılma üçün əlavə vaxt verin.",
+      "text2": "Sualınızın cavablandırılıb-cavablandırılmadığını öyrənmək üçün bizimlə əlaqə saxlamazdan əvvəl",
+      "text3": "tez-tez verilən suallar bölməmizi",
+      "text4": "yoxlayın.",
+      "firstname": "Adınız",
+      "surname": "Soyadınız",
+      "email": "Email",
+      "message": "Mesaj",
+      "send-message": "MESAJ GÖNDƏR"
+    },
+    "wishlist": {
+      "emptytext": "Favoritlər siyahınız boşdur",
+      "davamatext": "Alış-verişə davam edin",
+      "remove": "ÇIXART",
+      "wishlist": "Favoritlər"
+    },
+    "cart": {
+      "emptytext": "Sizin səbətiniz boşdur",
+      "davamatext": "Alış-verişə davam edin",
+      "reviewtext": "Səbətinizi nəzərdən keçirin",
+      "remove": "Cıxart",
+      "total": "Ümumi",
+      "checkout": "SİFARİŞİ TAMAMLA"
+    },
+    "login": {
+      "text": "Daxil olun",
+      "email": "Email ünvanı",
+      "password": "Şifrə",
+      "loginbutton": "DAXİL OLUN",
+      "accounttext": "Hesabınız yoxdur?",
+      "signup": "QEYDİYYATDAN KEÇİN"
+    },
+    "signup": {
+      "title": "Qeydiyyatdan keçin",
+      "text": "Sehrli xüsusiyyətlərdən zövq alın.",
+      "username": "İstifadəçi adı",
+      "email": "Email ünvanı",
+      "pass": "Şifrə",
+      "signup": "QEYDİYYATDAN KEÇİN",
+      "accounttext": "Hesabınız var?",
+      "login": "DAXİL OLUN"
+    },
+    "thankyou": {
+      "title": "Təşəkkür edirik",
+      "continue": "Alış-verişə davam edin",
+      "recommended": "Tövsiyə olunan məhsullar"
+    },
+    "profile": {
+      "title": "İstifadəçi detalları",
+      "username": "İstifadəçi adı",
+      "email": "Email",
+      "password": "Şifrə",
+      "update": "YENİLƏYİN",
+      "logout": "Çıxış edin"
+    },
+    "dashboard": {
+      "addproduct": {
+        "title": "Başlıq",
+        "url": "Şəkillərin linkləri",
+        "price": "Qiymət",
+        "cat": "Kateqoriyalar",
+        "desc": "Təsvir",
+        "addproduct": "MƏHSUL ƏLAVƏ ET"
+      },
+      "editproduct": {
+        "title": "Başlıq",
+        "imgs": "Şəkillər",
+        "price": "Qiymət",
+        "cat": "Kateqoriyalar",
+        "desc": "Təsvir",
+        "update": "YENİLƏYİN"
+      }
+    },
+    "404": {
+      "text1": "İtmisiniz?",
+      "text2": "Bir az geri qayıdın və ya ana səhifəyə qayıdın.",
+      "button":"SEHRBAZLIQ DÜNYASINA QAYIT"
+    }
+  }
+}

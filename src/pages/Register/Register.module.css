@@ -42,7 +42,7 @@
 }
 
 .signUp {
-  
+  color: #fcf5e7;
   display: flex;
   font-weight: bold;
   font-size: 50px;
@@ -201,6 +201,7 @@
   justify-content: center;
   font-weight: thin;
   padding-bottom: 20px;
+  color: #fcf5e7;
 }
 .logInBtn {
   width: 100%;

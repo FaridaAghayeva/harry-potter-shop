@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import style from "../ContactUs/Contact.module.css";
 import { NavLink } from "react-router-dom";
 import Breadcrumb from "../../components/BreadCrump/BreadCrump";
 import { toast } from "react-toastify";
 import supabase from "../../supabase";
 import { useCookies } from "react-cookie";
+import { ThemeContext } from "../../components/ContextAPIs/Theme/Theme";
 
 export default function ContactUs() {
+  const { darkMode } = useContext(ThemeContext);
   const paths = [
     { name: "Home", url: "/" },
     { name: "Contact Us", url: "/contact-us" },
@@ -56,9 +58,15 @@ export default function ContactUs() {
         </NavLink>
       </div>
 
-      <h1 className={style.title}>Contact Us</h1>
+      <h1 className={darkMode === "light" ? style.title : style.titleLight}>
+        Contact Us
+      </h1>
 
-      <div className={style.formContainer}>
+      <div
+        className={
+          darkMode === "light" ? style.formContainer : style.formContainerLight
+        }
+      >
         <div className={style.inside}>
           <p className={style.text1}>
             Orders made with standard shipping can take&nbsp;2-3 days to be
@@ -79,7 +87,9 @@ export default function ContactUs() {
               submitInformation();
             }}
           >
-            <div className={style.name}>
+            <div
+              className={darkMode === "light" ? style.name : style.nameLight}
+            >
               <label for="firstname">First Name</label>
               <input
                 type="text"
@@ -90,7 +100,11 @@ export default function ContactUs() {
                 required
               />
             </div>
-            <div className={style.surname}>
+            <div
+              className={
+                darkMode === "light" ? style.surname : style.surnameLight
+              }
+            >
               <label for="lastname">Last Name</label>
               <input
                 type="text"
@@ -101,7 +115,9 @@ export default function ContactUs() {
                 required
               />
             </div>
-            <div className={style.email}>
+            <div
+              className={darkMode === "light" ? style.email : style.emailLight}
+            >
               <label for="email">Email</label>
               <input
                 type="text"
@@ -112,7 +128,11 @@ export default function ContactUs() {
                 required
               />
             </div>
-            <div className={style.message}>
+            <div
+              className={
+                darkMode === "light" ? style.message : style.messageLight
+              }
+            >
               <label for="message">Message</label>
               <textarea
                 type="text"

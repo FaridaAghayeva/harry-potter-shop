@@ -1,5 +1,5 @@
 import { fetchProducts } from "../../../components/redux/productsSlicer";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import style from "../ProductSingle/ProductSingle.module.css";
@@ -16,8 +16,12 @@ import { NavLink } from "react-router-dom";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import { useWishlist } from "react-use-wishlist";
+import { toast } from "react-toastify";
+import { ThemeContext } from "../../../components/ContextAPIs/Theme/Theme";
 
 export default function ProductSingle() {
+  const { darkMode } = useContext(ThemeContext);
+
   const { addItem } = useCart();
   const { addWishlistItem, removeWishlistItem, inWishlist } = useWishlist();
   const [wishlistBtn, setWishlistBtn] = useState(false);
@@ -45,8 +49,10 @@ export default function ProductSingle() {
   const toggleWishlist = () => {
     if (wishlistBtn) {
       removeWishlistItem(productId);
+      toast.warning("Product is removed from wishlist successfully!");
     } else {
       addWishlistItem(product);
+      toast.success("Product is added to wishlist successfully!");
     }
     setWishlistBtn(!wishlistBtn);
   };
@@ -100,21 +106,41 @@ export default function ProductSingle() {
           <div>
             <div className={style.heart} onClick={toggleWishlist}>
               {wishlistBtn ? (
-                <div>
-                  <p>Remove from Wishlist</p>
-                  <FaHeart className={style.heartFull} />
+                <div className={style.heart}>
+                  <FaHeart
+                    className={
+                      darkMode === "dark"
+                        ? style.heartFull
+                        : style.heartFullLight
+                    }
+                  />
+                  <p className={darkMode === "light" ? style.textColor : ""}>
+                    Remove from Wishlist
+                  </p>
                 </div>
               ) : (
-                <div>
-                  <p>Add to Wishlist</p>
-                  <CiHeart className={style.heartNotFull} />
+                <div className={style.heart}>
+                  <CiHeart
+                    className={
+                      darkMode === "dark"
+                        ? style.heartNotFull
+                        : style.heartNotFullLight
+                    }
+                  />
+                  <p className={darkMode === "light" ? style.textColor : ""}>
+                    Add to Wishlist
+                  </p>
                 </div>
               )}
             </div>
           </div>
-          <h1 className={style.title}>{product?.title}</h1>
+          <h1 className={darkMode === "dark" ? style.title : style.titleLight}>
+            {product?.title}
+          </h1>
           <hr></hr>
-          <h1 className={style.price}>{product?.price}.00 AZN</h1>
+          <h1 className={darkMode === "dark" ? style.price : style.priceLight}>
+            {product?.price}.00 AZN
+          </h1>
           <hr></hr>
           <div>
             <div className={style.btn} onClick={() => addItem(product)}>

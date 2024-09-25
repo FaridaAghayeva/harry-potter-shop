@@ -8,18 +8,23 @@ import { FaUser } from "react-icons/fa";
 import { useCookies } from "react-cookie";
 import { Events } from "react-scroll";
 import { UserContext } from "../../components/ContextAPIs/Users/UserContext";
+import { ThemeContext } from "../ContextAPIs/Theme/Theme";
 
 export default function Navbar() {
+  const { darkMode, toggleTheme } = useContext(ThemeContext);
   const [isVisible, setVisible] = useState(false);
   const [cookie] = useCookies("cookie-user");
   const [isSticky, setIsSticky] = useState(false);
+
   const { users } = useContext(UserContext);
   const user = users?.find((item) => {
     return item.token === cookie["cookie-user"];
   });
+
   function displayToggleMenu() {
     setVisible(!isVisible);
   }
+
   useEffect(() => {
     Events.scrollEvent.register("begin", () => setIsSticky(true));
     Events.scrollEvent.register("end", () => setIsSticky(false));
@@ -29,12 +34,17 @@ export default function Navbar() {
       Events.scrollEvent.remove("end");
     };
   }, []);
+
   const { totalUniqueItems } = useCart();
   const { totalWishlistItems } = useWishlist();
 
   return (
     <header className={`${style.container}`}>
-      <div className={style.loginPart}>
+      <div
+        className={
+          darkMode === "light" ? style.loginPart : style.loginPartLight
+        }
+      >
         <div className={style.fanclub}>
           <img src="https://harrypottershop.co.uk/cdn/shop/t/22/assets/hp_fan_club_logo_horizontal_dark.svg?v=31198702805312198181678387973" />
         </div>
@@ -58,14 +68,25 @@ export default function Navbar() {
               <div className={style.dashboard}>Dashboard</div>
             </NavLink>
           )}
+
           <img
-            className={style.sun}
-            src="https://harrypottershop.co.uk/cdn/shop/t/22/assets/sun_2x.png"
+            className={darkMode === "dark" ? style.moon : style.sun}
+            src={
+              darkMode === "dark"
+                ? "https://harrypottershop.co.uk/cdn/shop/t/22/assets/moon_2x.png"
+                : "https://harrypottershop.co.uk/cdn/shop/t/22/assets/sun_2x.png"
+            }
+            alt="theme toggle"
+            onClick={toggleTheme}
           />
         </div>
       </div>
 
-      <div className={style.itemsContainer}>
+      <div
+        className={
+          darkMode === "light" ? style.itemsContainer : style.itemsContainer2
+        }
+      >
         <div className={style.logos}>
           <div
             onClick={displayToggleMenu}
@@ -84,7 +105,13 @@ export default function Navbar() {
                   <div className={style.totalWishlist2}>
                     <p>{totalWishlistItems !== 0 ? totalWishlistItems : 0}</p>
                   </div>
-                  <div className={style.wishlist2}></div>
+                  <div
+                    className={
+                      darkMode === "light"
+                        ? style.wishlist2
+                        : style.wishlist2Light
+                    }
+                  ></div>
                 </div>
               </div>
             </NavLink>
@@ -93,7 +120,11 @@ export default function Navbar() {
                 <div className={style.totalCart2}>
                   <p>{totalUniqueItems !== 0 ? totalUniqueItems : 0}</p>
                 </div>
-                <div className={style.basket2}></div>
+                <div
+                  className={
+                    darkMode === "light" ? style.basket2 : style.basket2Light
+                  }
+                ></div>
               </NavLink>
             </div>
           </div>
@@ -106,10 +137,17 @@ export default function Navbar() {
             <NavLink
               to="/"
               style={({ isActive }) => {
-                return isActive ? { color: "#a85" } : {};
+                return isActive
+                  ? {
+                      fontWeight: "900",
+                      textDecoration: "underline",
+                    }
+                  : {};
               }}
             >
-              <span>Home</span>
+              <span className={darkMode === "dark" ? style.darkSpan : ""}>
+                Home
+              </span>
             </NavLink>
             <span>
               <img src="https://harrypottershop.co.uk/cdn/shop/t/22/assets/dot.svg" />
@@ -117,10 +155,14 @@ export default function Navbar() {
             <NavLink
               to="/about-us"
               style={({ isActive }) => {
-                return isActive ? { color: "#a85" } : {};
+                return isActive
+                  ? { fontWeight: "900", textDecoration: "underline" }
+                  : {};
               }}
             >
-              <span>About Us</span>
+              <span className={darkMode === "dark" ? style.darkSpan : ""}>
+                About Us
+              </span>
             </NavLink>
 
             <span>
@@ -129,10 +171,14 @@ export default function Navbar() {
             <NavLink
               to="/products"
               style={({ isActive }) => {
-                return isActive ? { color: "#a85" } : {};
+                return isActive
+                  ? { fontWeight: "900", textDecoration: "underline" }
+                  : {};
               }}
             >
-              <span>Shop</span>
+              <span className={darkMode === "dark" ? style.darkSpan : ""}>
+                Shop
+              </span>
             </NavLink>
             <span>
               <img src="https://harrypottershop.co.uk/cdn/shop/t/22/assets/dot.svg" />
@@ -140,10 +186,14 @@ export default function Navbar() {
             <NavLink
               to="/contact-us"
               style={({ isActive }) => {
-                return isActive ? { color: "#a85" } : {};
+                return isActive
+                  ? { fontWeight: "900", textDecoration: "underline" }
+                  : {};
               }}
             >
-              <span>Contact Us</span>
+              <span className={darkMode === "dark" ? style.darkSpan : ""}>
+                Contact Us
+              </span>
             </NavLink>
             <span>
               <img src="https://harrypottershop.co.uk/cdn/shop/t/22/assets/dot.svg" />
@@ -156,7 +206,13 @@ export default function Navbar() {
                     <div className={style.totalWishlist}>
                       <p>{totalWishlistItems !== 0 ? totalWishlistItems : 0}</p>
                     </div>
-                    <div className={style.wishlist}></div>
+                    <div
+                      className={
+                        darkMode === "light"
+                          ? style.wishlist
+                          : style.wishlistLight
+                      }
+                    ></div>
                   </div>
                 </div>
               </NavLink>
@@ -165,7 +221,11 @@ export default function Navbar() {
                   <div className={style.totalCart}>
                     <p>{totalUniqueItems !== 0 ? totalUniqueItems : 0}</p>
                   </div>
-                  <div className={style.basket}></div>
+                  <div
+                    className={
+                      darkMode === "light" ? style.basket : style.basketLight
+                    }
+                  ></div>
                 </NavLink>
               </div>
             </div>

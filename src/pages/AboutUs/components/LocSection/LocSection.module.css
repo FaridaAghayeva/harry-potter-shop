@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  color: #fcf5e7;
 }
 .title::before {
   content: "";
@@ -26,6 +27,40 @@
 .title::after {
   content: "";
   background-color: #fcf5e7;
+  width: calc(50% - 140px);
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate3d(0, -50%, 0);
+  mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/brown-line.svg");
+  mask-size: cover;
+  mask-repeat: no-repeat;
+}
+.titleLight {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #4a2b10;
+}
+.titleLight::before {
+  content: "";
+  background-color: #4a2b10;
+  width: calc(50% - 140px);
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate3d(0, -50%, 0);
+  mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/brown-line.svg");
+  mask-size: cover;
+  mask-repeat: no-repeat;
+}
+.titleLight::after {
+  content: "";
+  background-color: #4a2b10;
   width: calc(50% - 140px);
   height: 3px;
   position: absolute;

@@ -6,14 +6,13 @@
   justify-content: center;
 }
 .liItem {
+  display: grid;
+  grid-template-rows: 250px 50px 50px;
   width: 300px;
-  height: 400px;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  text-align: center;
   gap: 20px;
 }
 .img {
@@ -24,6 +23,20 @@
 }
 .hr1 {
   background-color: #fcf5e7;
+  border: 0;
+  height: 4px;
+  margin: 30px 0;
+  -webkit-mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/brown-line.svg");
+  mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/brown-line.svg");
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.hr1Light {
+  background-color: black;
   border: 0;
   height: 4px;
   margin: 30px 0;
@@ -47,6 +60,14 @@
 }
 .wishlistEmptyText {
   font-size: 40px;
+  color: #fcf5e7;
+}
+.wishlistEmptyTextLight {
+  font-size: 40px;
+  color: black;
+}
+.continueTexttLight {
+  color: black;
 }
 .wishlistEmptyTextContainer h2 {
   text-decoration: underline;
@@ -57,6 +78,15 @@
 .title {
   font-size: 25px;
   font-weight: bold;
+}
+.titleLight {
+  font-size: 25px;
+  font-weight: bold;
+  color: #fcf5e7;
+}
+
+.titleh2Light {
+  color: #fcf5e7;
 }
 .basket {
   background-color: #fcf5e7;
@@ -71,12 +101,31 @@
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
+  cursor: pointer;
+}
+.basketLight {
+  background-color: #4a2b10;
+  width: 36px;
+  height: 24px;
+  transition: color 0.25s;
+  -webkit-mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/cart.svg");
+  mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/cart.svg");
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  cursor: pointer;
 }
 .btnContainer {
-  display: flex;
-  flex-direction: row;
-  gap: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
+}
+.basketContainer{
+  display: flex;
+  justify-content: center;
 }
 .btn {
   color: #fcf5e7;

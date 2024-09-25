@@ -9,19 +9,22 @@ import { CartProvider } from "react-use-cart";
 import { WishlistProvider } from "react-use-wishlist";
 import { UserProvider } from "./components/ContextAPIs/Users/UserContext.jsx";
 import { ToastContainer } from "react-toastify";
+import { ThemeProvider } from "./components/ContextAPIs/Theme/Theme.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <UserProvider>
-    <CartProvider>
-      <WishlistProvider>
-        <Provider store={store}>
-          <FAQProvider>
-            <HeadProvider>
-              <App />
-            </HeadProvider>
-          </FAQProvider>
-        </Provider>
-      </WishlistProvider>
-    </CartProvider>
-  </UserProvider>
+  <ThemeProvider>
+    <UserProvider>
+      <CartProvider>
+        <WishlistProvider>
+          <Provider store={store}>
+            <FAQProvider>
+              <HeadProvider>
+                <App />
+              </HeadProvider>
+            </FAQProvider>
+          </Provider>
+        </WishlistProvider>
+      </CartProvider>
+    </UserProvider>
+  </ThemeProvider>
 );

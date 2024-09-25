@@ -1,10 +1,16 @@
-* {
-  text-decoration: none;
-  color: #fcf5e7;
-}
-
 .container {
   background-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/footer-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 100px;
+  overflow: hidden;
+  color: #fcf5e7;
+}
+.containerLight {
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/footer-light.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -18,12 +24,14 @@
   flex-direction: row;
   gap: 15%;
   justify-content: center;
-  padding-bottom: 100px;
+  padding-bottom: 100px;  color: #fcf5e7;
+
 }
 .about h2,
 .customer h2 {
   padding-bottom: 20px;
-  font-size: 25px;
+  font-size: 25px;  color: #fcf5e7;
+
 }
 
 .customer {
@@ -33,6 +41,8 @@
 
 .customer a {
   padding-bottom: 20px;
+  color: #fcf5e7;
+
 }
 
 .signUpContainer {
@@ -43,6 +53,8 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
+  color: #fcf5e7;
+
 }
 
 .button {
@@ -102,6 +114,8 @@
   text-align: center;
   width: 500px;
   padding-top: 50px;
+  color: #fcf5e7;
+
 }
 
 @media (max-width: 800px) {
@@ -125,7 +139,7 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     margin: auto;
-    text-align: center; 
+    text-align: center;
     width: fit-content;
   }
 }

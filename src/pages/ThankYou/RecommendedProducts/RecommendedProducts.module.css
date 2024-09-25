@@ -4,9 +4,7 @@
   margin: auto;
   justify-content: center;
   padding-bottom: 50px;
-}
-.containerNewIns {
-  padding: 50px 0;
+  color: #fcf5e7;
 }
 
 .newInTitle:before {

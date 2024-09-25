@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import style from "../TextSection/TextSection.module.css";
 import { NavLink } from "react-router-dom";
 import Breadcrumb from "../../../../components/BreadCrump/BreadCrump";
+import { ThemeContext } from "../../../../components/ContextAPIs/Theme/Theme";
 
 const TextSection = () => {
+  const { darkMode } = useContext(ThemeContext);
+
   const paths = [
     { name: "Home", url: "/" },
     { name: "About Us", url: "/about-us" },
@@ -16,7 +19,7 @@ const TextSection = () => {
           <Breadcrumb paths={paths} />
         </NavLink>
       </div>
-      <div className={style.text}>
+      <div className={ darkMode==='light'?style.text : style.textLight}>
         <p>
           The Harry Potter Shop is the official online shop for all your
           wizarding needs, housing ranges from Warner Bros. Studio Tour London,

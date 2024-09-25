@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import style from "../LocSection/LocSection.module.css";
 import Marquee from "react-fast-marquee";
 import LocationCard from "../LocationCard/LocationCard";
+import { ThemeContext } from "../../../../components/ContextAPIs/Theme/Theme";
 
 const LocSection = () => {
+  const { darkMode } = useContext(ThemeContext);
   const locations = [
     {
       description: "Harry Potter Store New York",
@@ -32,7 +34,7 @@ const LocSection = () => {
   ];
   return (
     <div className={style.container}>
-      <div className={style.title}>
+      <div className={darkMode === "light" ? style.title : style.titleLight}>
         <h1>Locations</h1>
       </div>
       <Marquee>

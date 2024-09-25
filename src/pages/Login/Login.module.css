@@ -51,6 +51,7 @@
   margin: auto;
   text-align: center;
   justify-content: center;
+  color: #fcf5e7;
 }
 
 .hrs {
@@ -200,6 +201,7 @@
   justify-content: center;
   font-weight: thin;
   padding-bottom: 20px;
+  color: #fcf5e7;
 }
 
 .signInBtn {

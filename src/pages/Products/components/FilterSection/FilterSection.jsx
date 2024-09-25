@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../../../components/redux/productsSlicer";
 import Loader from "../../../../components/Loader/Loader";
 import Product from "../Product/Product";
 import style from "../ProductsAll/ProductsAll.module.css";
 import ToggleFilterMenu from "./ToggleFilterMenu/ToggleFilterMenu";
+import { ThemeContext } from "../../../../components/ContextAPIs/Theme/Theme";
 
 export default function FilterSection() {
+  const { darkMode } = useContext(ThemeContext);
+
   const dispatch = useDispatch();
   const data = useSelector((state) => state);
   const [selectedCategories, setSelectedCategories] = useState([]);
@@ -131,10 +134,20 @@ export default function FilterSection() {
                 value={searchItem}
                 onChange={handleInputChange}
                 placeholder="Type to search"
-                className={style.searctInput}
+                className={
+                  darkMode === "light"
+                    ? style.searctInput
+                    : style.searctInputLight
+                }
               />
             </div>
-            <div className={style.sortContainer}>
+            <div
+              className={
+                darkMode === "dark"
+                  ? style.sortContainer
+                  : style.sortContainerLight
+              }
+            >
               <h1>Sort By</h1>
               <div className={style.sorts}>
                 <div>
@@ -180,7 +193,13 @@ export default function FilterSection() {
               </div>
             </div>
             <hr />
-            <div className={style.filterContainer}>
+            <div
+              className={
+                darkMode === "dark"
+                  ? style.filterContainer
+                  : style.filterContainerLight
+              }
+            >
               <h1>Filter By</h1>
               {uniqueCategories.map((category, i) => (
                 <div key={i} className={style.filters}>

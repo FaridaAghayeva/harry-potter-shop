@@ -1,56 +1,47 @@
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  gap: 50px;
-}
 .wholeContainer {
-  padding: 100px;
-}
-.wholeContainerLight {
-  padding: 100px;
-}
-.wholeContainerLight p,
-.wholeContainerLight span {
-  color: #fcf5e7;
-}
-.itemContainer {
   display: grid;
-  grid-template-rows: 250px 80px 50px;
-  width: 200px;
+  grid-template-columns: repeat(2, 1fr);
 }
-.image {
-  height: 250px;
-  border: 2px solid #a85;
-  position: relative;
-}
-.image img {
-  width: 200px;
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-}
-.editBtn {
-  color: black;
-}
-.title p {
-  font-size: 20px;
+.container1 p,
+.container2 label {
+  font-size: 30px;
   font-weight: bold;
-  box-sizing: border-box;
-  text-align: center;
   padding: 20px 0;
+  color: #e6ceaa;
 }
 
-.buttons {
+.container2 {
   display: flex;
-  flex-direction: row;
-  margin: auto;
-  gap: 30px;
-  font-size: 30px;
-  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 50px;
+  gap: 50px;
+  margin: 100px;
 }
-.addbtn {
+.item {
+  display: flex;
+  flex-direction: column;
+}
+.image img {
+  width: 100px;
+}
+.input {
+  background-color: #fcf5e7 !important;
+  color: black !important;
+}
+.inputLight {
+  background-color: black !important;
+  color: #fcf5e7 !important;
+}
+.item input,
+textarea {
+  background-color: black;
+  border: 2px solid #a85;
+  padding: 15px;
+  font-size: 20px;
+  border-color: #a85;
+}
+.btn {
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -74,7 +65,7 @@
   position: relative;
   margin: 0 20px 50px 20px;
 }
-.addbtn::before {
+.btn::before {
   content: "";
   background-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/btn_left.svg");
   background-position: 100%;
@@ -89,7 +80,7 @@
   right: 100%;
 }
 
-.addbtn::after {
+.btn::after {
   content: "";
   background-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/btn_right.svg");
   background-position: 100%;

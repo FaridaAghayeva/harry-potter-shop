@@ -1,3 +1,8 @@
+.containerLight p,
+.containerLight label,
+.containerLight span {
+  color: #fcf5e7 !important;
+}
 .form div {
   display: flex;
   flex-direction: column;
@@ -15,10 +20,19 @@
 
   border-color: #a85;
 }
+.input {
+  background-color: #fcf5e7 !important;
+}
 .text {
   display: flex;
   font-size: 40px;
   padding: 20px 0;
+}
+.textLight {
+  display: flex;
+  font-size: 40px;
+  padding: 20px 0;
+  color: #fcf5e7;
 }
 .userDetails p {
   font-size: 30px;

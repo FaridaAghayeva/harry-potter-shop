@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import style from "./Footer.module.css";
 import { NavLink } from "react-router-dom";
+import { ThemeContext } from "../ContextAPIs/Theme/Theme";
 
 export default function Footer() {
+  const { darkMode } = useContext(ThemeContext);
+
   return (
-    <div className={style.container}>
+    <div
+      className={darkMode === "light" ? style.container : style.containerLight}
+    >
       <div className={style.liItems}>
         <div className={style.icon}>
           <img src="https://harrypottershop.co.uk/cdn/shop/t/22/assets/ww-logo.svg" />

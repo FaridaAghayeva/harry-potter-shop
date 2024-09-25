@@ -1,5 +1,5 @@
 import Product from "../../../Products/components/Product/Product";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import style from "../NewIn/NewIn.module.css";
@@ -10,8 +10,11 @@ import "swiper/css/navigation";
 import "../NewIn/style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../../../components/redux/productsSlicer";
+import { ThemeContext } from "../../../../components/ContextAPIs/Theme/Theme";
 
 export default function NewIn() {
+  const { darkMode } = useContext(ThemeContext);
+
   const [swiperRef, setSwiperRef] = useState(null);
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.data);
@@ -22,7 +25,13 @@ export default function NewIn() {
 
   return (
     <div className={style.containerNewIns}>
-      <h1 className={style.newInTitle}>New In</h1>
+      <h1
+        className={
+          darkMode === "dark" ? style.newInTitle : style.newInTitleLight
+        }
+      >
+        New In
+      </h1>
       <Swiper
         modules={[Virtual, Navigation, Pagination]}
         onSwiper={setSwiperRef}

@@ -24,6 +24,20 @@
 .trolley {
   background-image: url("https://harrypottershop.co.uk/cdn/shop/files/Sweets_static_card_large.jpg?v=1649173724");
 }
+.wandLight {
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/files/Wand_static_card_large.jpg?v=1649173708");
+}
+
+.trunkLight {
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/files/Trunk_card_large.gif?v=1646994755");
+}
+
+.clothingLight {
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/files/Robe_card_large.gif?v=1646928736");
+}
+.trolleyLight {
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/files/Sweets_static_card_large.jpg?v=1649173724");
+}
 .wand,
 .trunk,
 .clothing,
@@ -34,11 +48,35 @@
   height: 300px;
   box-shadow: 1px 1px 10px #fcf5e7;
 }
+.wandLight,
+.trunkLight,
+.clothingLight,
+.trolleyLight {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  box-shadow: 1px 1px 10px black;
+}
 
 .wand p,
 .trunk p,
 .clothing p,
 .trolley p {
+  font-size: 25px;
+  font-weight: bold;
+  margin: auto;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 150px 0;
+  box-sizing: border-box;
+}
+.wandLight p,
+.trunkLight p,
+.clothingLight p,
+.trolleyLight p {
   font-size: 25px;
   font-weight: bold;
   margin: auto;

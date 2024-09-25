@@ -7,7 +7,10 @@ import { UserContext } from "../../components/ContextAPIs/Users/UserContext";
 import supabase from "../../supabase";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
+import { ThemeContext } from "../../components/ContextAPIs/Theme/Theme";
 export default function Profile() {
+  const { darkMode } = useContext(ThemeContext);
+
   const [cookie, , removeCookie] = useCookies(["cookie-user"]);
   const { emptyCart } = useCart();
   const { emptyWishlist } = useWishlist();
@@ -63,10 +66,14 @@ export default function Profile() {
   };
 
   return (
-    <div className={style.container}>
+    <div
+      className={darkMode === "dark" ? style.container : style.containerLight}
+    >
       <div className={style.formContainer}>
         <div className={style.userDetails}>
-          <div className={style.text}>User details</div>
+          <div className={darkMode === "dark" ? style.text : style.textLight}>
+            User details
+          </div>
           <div className={style.usernameText}>
             <p>Username:</p> <span>{user?.username}</span>
           </div>
@@ -76,17 +83,32 @@ export default function Profile() {
         </div>
         <form className={style.form} onSubmit={handleSubmit}>
           <div className={style.name}>
-            <label for="username">User Name</label>
-            <input type="text" name="username" onChange={handleChange} />
+            <label for="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              onChange={handleChange}
+              className={darkMode === "dark" ? style.input : ""}
+            />
           </div>
 
           <div className={style.email}>
             <label for="email">Email</label>
-            <input type="text" name="email" onChange={handleChange} />
+            <input
+              type="text"
+              name="email"
+              onChange={handleChange}
+              className={darkMode === "dark" ? style.input : ""}
+            />
           </div>
           <div className={style.message}>
             <label for="password">Password</label>
-            <input type="password" name="password" onChange={handleChange} />
+            <input
+              type="password"
+              name="password"
+              onChange={handleChange}
+              className={darkMode === "dark" ? style.input : ""}
+            />
           </div>
           <div className={style.btnContainer}>
             <button type="submit" className={style.btn}>

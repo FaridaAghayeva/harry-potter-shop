@@ -3,6 +3,12 @@
   letter-spacing: 0.5px;
   font-size: 20px;
 }
+.textLight {
+  line-height: 30px;
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  color: #fcf5e7;
+}
 .btn {
   color: #fcf5e7;
   text-transform: uppercase;

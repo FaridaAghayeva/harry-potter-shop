@@ -13,13 +13,32 @@
   margin: 50px 120px;
   font-size: 40px;
 }
-
+.titleLight {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 50px 120px;
+  font-size: 40px;
+  color: #4a2b10;
+}
 .formContainer {
   display: flex;
   flex-direction: column;
   padding: 0 200px;
   justify-content: center;
   margin: auto;
+}
+.formContainerLight {
+  display: flex;
+  flex-direction: column;
+  padding: 0 200px;
+  justify-content: center;
+  margin: auto;
+  color: #4a2b10;
+}
+.formContainerLight a {
+  color: #4a2b10;
 }
 
 .inside {
@@ -49,13 +68,31 @@
 .message textarea {
   background-color: black;
   border: 2px solid #a85;
-
   padding: 15px;
   font-size: 20px;
-
+  border-color: #a85;
+  color: #fcf5e7;
+}
+.nameLight input,
+.surnameLight input,
+.emailLight input,
+.messageLight textarea {
+  background-color: #fcf5e7;
+  border: 2px solid #a85;
+  padding: 15px;
+  font-size: 20px;
   border-color: #a85;
 }
-
+.name,
+.nameLight,
+.surname,
+.surnameLight,
+.email,
+.emailLight,
+.message,
+.messageLight {
+  font-size: 20px;
+}
 .form label {
   margin-bottom: 10px;
 }
@@ -117,7 +154,9 @@
   display: flex;
   align-items: center;
 }
-
+.btnContainer button {
+  cursor: pointer;
+}
 .title::before {
   content: "";
   background-color: #fcf5e7;
@@ -146,7 +185,34 @@
   box-sizing: border-box;
   margin: 120px;
 }
+.titleLight::before {
+  content: "";
+  background-color: #4a2b10;
+  width: calc(50% - 250px);
+  height: 3px;
+  position: absolute;
+  left: 0;
+  mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/brown-line.svg");
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  box-sizing: border-box;
+  margin: 120px;
+}
 
+.titleLight::after {
+  content: "";
+  background-color: #4a2b10;
+  width: calc(50% - 250px);
+  height: 3px;
+  position: absolute;
+  transform: rotate(180deg);
+  right: 0;
+  mask-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/brown-line.svg");
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  box-sizing: border-box;
+  margin: 120px;
+}
 @media (max-width: 1500px) {
   .inside {
     margin: 0;
@@ -163,7 +229,7 @@
   .formContainer {
     width: fit-content;
   }
-  .inside{
+  .inside {
     width: fit-content;
   }
 }

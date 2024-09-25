@@ -2,16 +2,16 @@
   font-family: "Cormorant";
   src: url("../src/fonts/cormorant/cormorant_medium_macroman/Cormorant-Medium-webfont.woff")
     format("woff");
-
-  /* Add additional font formats if necessary */
-  /* Specify the correct path to the font files */
 }
 
 body {
-  font-family: "Cormorant"!important;
-  background-color: black;
+  font-family: "Cormorant" !important;
 }
 
 * {
   margin: 0;
+  text-decoration: none;
+}
+a {
+  color: #fcf5e7;
 }

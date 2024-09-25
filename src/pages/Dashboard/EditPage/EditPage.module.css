@@ -1,1 +1,119 @@
+.wholeContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 100px auto;
+}
+.container1 p,
+.container2 label {
+  font-size: 30px;
+  font-weight: bold;
+  padding: 20px 0;
+  color: #e6ceaa;
+}
+.wholeContainerLight {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 100px auto;
+}
+.wholeContainer p,
+.wholeContainerspan {
+  color: black;
+}
+.wholeContainer input,
+.wholeContainer textarea {
+  background-color: #fcf5e7 !important;
+  color: black;
+}
+.wholeContainerLight p,
+.wholeContainerLight span {
+  color: #fcf5e7;
+}
+.wholeContainerLight input,
+.wholeContainerLight textarea {
+  background-color: black !important;
+  color: #fcf5e7;
+}
+.container1 {
+  padding: 0 50px;
+}
+.container1 span {
+  font-size: 23px;
+  line-height: 30px;
+}
+.container2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 50px;
+  gap: 50px;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+}
+.image img {
+  width: 100px;
+}
+.item input,
+textarea {
+  background-color: black;
+  border: 2px solid #a85;
+  padding: 15px;
+  font-size: 20px;
+  border-color: #a85;
+}
+.btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: #fcf5e7;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-color: #0000;
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/btn_bg.svg");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  border: none;
+  height: 46px;
+  width: 300px;
+  margin: auto;
+  align-items: center;
+  font-family: bluu_nextbold, Crimson Text, serif;
+  font-size: 19px;
+  font-weight: 600;
+  position: relative;
+  margin: 0 20px 50px 20px;
+}
+.btn::before {
+  content: "";
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/btn_left.svg");
+  background-position: 100%;
+  background-repeat: no-repeat;
+  background-size: calc(100% + 1px) 100%;
+  width: 27px;
+  height: 46px;
+  display: block;
+  position: absolute;
+  left: -26px;
+  bottom: 0;
+  right: 100%;
+}
 
+.btn::after {
+  content: "";
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/btn_right.svg");
+  background-position: 100%;
+  background-repeat: no-repeat;
+  background-size: calc(100% + 1px) 100%;
+  width: 27px;
+  height: 46px;
+  display: block;
+  position: absolute;
+  right: -27px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+}

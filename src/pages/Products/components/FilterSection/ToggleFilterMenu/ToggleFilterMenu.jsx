@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import style from "../ToggleFilterMenu/ToggleFilterMenu.module.css";
+import { ThemeContext } from "../../../../../components/ContextAPIs/Theme/Theme";
 
 export default function ToggleFilterMenu({
   searchItem,
@@ -10,6 +11,8 @@ export default function ToggleFilterMenu({
   handleCategoryChange,
   displayFilters,
 }) {
+  const { darkMode } = useContext(ThemeContext);
+
   return (
     <div className={style.sortingAndFiltering}>
       <div onClick={displayFilters}>
@@ -26,8 +29,12 @@ export default function ToggleFilterMenu({
           className={style.searctInput}
         />
       </div>
-      <div className={style.sortContainer}>
-        <h1>Sort By</h1>
+      <div
+        className={
+          darkMode === "light" ? style.sortContainer : style.sortContainerLight
+        }
+      >
+        <h1 className={style.sortContainerLight}>Sort By</h1>
         <div className={style.sorts}>
           <div>
             <input

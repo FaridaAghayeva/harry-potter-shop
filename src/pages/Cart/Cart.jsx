@@ -5,8 +5,10 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { UserContext } from "../../components/ContextAPIs/Users/UserContext";
 import { Bounce, toast, ToastContainer } from "react-toastify";
+import { ThemeContext } from "../../components/ContextAPIs/Theme/Theme";
 
 export default function Cart() {
+  const { darkMode } = useContext(ThemeContext);
   const [cookie] = useCookies(["cookie-user"]);
   const { users } = useContext(UserContext);
   const [thank, setThank] = useState("");
@@ -25,11 +27,21 @@ export default function Cart() {
   if (isEmpty)
     return (
       <div className={style.cartEmptyTextContainer}>
-        <h1 className={style.cartEmptyText}>Your cart is empty</h1>
+        <h1
+          className={
+            darkMode === "light"
+              ? style.cartEmptyText
+              : style.cartEmptyTextLight
+          }
+        >
+          Your cart is empty
+        </h1>
         <NavLink to="/products">
-          <h2>Continue shopping</h2>
+          <h2 className={darkMode === "light" ? "" : style.continueTexttLight}>
+            Continue shopping
+          </h2>
         </NavLink>
-        <hr className={style.hr1}></hr>
+        <hr className={darkMode === "light" ? style.hr1 : style.hr1Light}></hr>
       </div>
     );
   const manageCheckOut = () => {
@@ -41,14 +53,26 @@ export default function Cart() {
   };
   return (
     <>
-      <div className={style.cartContainer}>
+      <div
+        className={
+          darkMode === "dark" ? style.cartContainer : style.cartContainerLight
+        }
+      >
         <h1>Review your cart ({totalUniqueItems})</h1>
         <ul>
           {items.map((item) => (
             <div key={item.id}>
-              <hr className={style.hr1}></hr>
+              <hr
+                className={darkMode === "light" ? style.hr1 : style.hr1Light}
+              ></hr>
               <li className={style.liContainer}>
-                <div className={style.imgContainer}>
+                <div
+                  className={
+                    darkMode === "dark"
+                      ? style.imgContainerLight
+                      : style.imgContainer
+                  }
+                >
                   <img src={item.images[0]} alt={item.title} />
                 </div>
                 <div className={style.detailsContainer}>
@@ -68,7 +92,7 @@ export default function Cart() {
                           }
                           className={style.price}
                         >
-                          -
+                          <span>-</span>
                         </div>
                         <p className={style.price}>{item.quantity}</p>
                         <div
@@ -80,17 +104,19 @@ export default function Cart() {
                           }
                           className={style.price}
                         >
-                          +
+                          <span>+</span>
                         </div>
                       </div>
-                      <div>{item.price * item.quantity}.00 AZN</div>
+                      <div>
+                        <span>{item.price * item.quantity}.00 AZN</span>
+                      </div>
                     </div>
                     <div className={style.wishRemove}>
                       <div
                         className={style.removeButton}
                         onClick={() => removeItem(item.id)}
                       >
-                        &times; Remove
+                        <span>Remove</span>
                       </div>
                     </div>
                   </div>

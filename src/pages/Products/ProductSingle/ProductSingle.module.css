@@ -15,7 +15,31 @@
   gap: 50px;
   margin: 50px 100px;
 }
+.textColor {
+  color: #fcf5e7;
+}
 
+.heart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  height: 20px;
+}
+.heartNotFull {
+  font-size: 25px;
+}
+.heartFull {
+  font-size: 20px;
+}
+.heartNotFullLight {
+  font-size: 25px;
+  color: #fcf5e7;
+}
+.heartFullLight {
+  font-size: 20px;
+  color: #fcf5e7;
+}
 .swiperContainer {
   width: 50%;
 }
@@ -31,6 +55,15 @@
 }
 .price {
   font-size: 55px;
+}
+
+.titleLight {
+  font-size: 40px;
+  color: #fcf5e7;
+}
+.priceLight {
+  font-size: 55px;
+  color: #fcf5e7;
 }
 hr {
   background-color: #a85;

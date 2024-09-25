@@ -6,6 +6,7 @@
   height: 80vh;
   box-sizing: border-box;
   padding: 30px;
+  color: #fcf5e7;
 }
 .border {
   box-sizing: border-box;
@@ -24,7 +25,7 @@
   height: 300px;
   margin: 70px 40px;
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 75%;
   transform: translate(-50%, 0);
 }

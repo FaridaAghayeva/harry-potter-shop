@@ -11,7 +11,6 @@
   flex-direction: column;
   gap: 30px;
   padding-top: 50px;
-  
 }
 
 .sortContainer,
@@ -21,7 +20,13 @@
   flex-direction: column;
   gap: 20px;
 }
-
+.sortContainerLight,
+.filterContainerLight {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #fcf5e7;
+}
 .searctInput {
   background-color: black;
   color: #a85;

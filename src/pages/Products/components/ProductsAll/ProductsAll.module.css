@@ -1,3 +1,15 @@
+/* light mode section */
+
+.imgBck {
+  background-color: #f4e9d3;
+  box-sizing: border-box;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+/* light mode section  */
 .all {
   display: flex;
   flex-wrap: wrap;
@@ -14,19 +26,19 @@
 }
 .image {
   border: 1px solid #a85;
-  height: 300px;
+  padding: 50px 0;
   width: 250px;
+  height: 210px;
   position: relative;
 }
 .image img {
   box-sizing: border-box;
-  width: 250px;
+  width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   margin: auto;
-  padding: 20px 0;
 }
 .details {
   height: 150px;
@@ -42,6 +54,14 @@
   justify-content: center;
   font-size: 22px;
   height: 70px;
+}
+.titleLight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  height: 70px;
+  color: #4a2b10;
 }
 .price {
   display: flex;
@@ -74,7 +94,7 @@
   margin: auto;
   width: 150px;
   padding: 10px 15px;
- 
+
   position: relative;
 }
 .btn:after {
@@ -115,7 +135,14 @@
   width: 300px;
   white-space: nowrap;
 }
-
+.filterContainerLight {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+  white-space: nowrap;
+  color: #fcf5e7;
+}
 .filters {
   font-size: 20px;
   width: 100%;
@@ -139,7 +166,7 @@
   height: 46px;
   margin: 0 26px;
   padding: 10px;
- 
+
   font-size: 19px;
   font-weight: 600;
   line-height: 1.4em;
@@ -148,7 +175,7 @@
   text-transform: uppercase;
   text-align: center;
   color: #fcf5e7;
- 
+
   font-weight: 600;
   text-decoration: none;
   position: relative;
@@ -208,6 +235,14 @@
   width: 300px;
   white-space: nowrap;
 }
+.sortContainerLight {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+  white-space: nowrap;
+  color: #fcf5e7;
+}
 
 .sorts {
   display: flex;
@@ -234,6 +269,14 @@
   width: 100%;
   font-size: 20px;
 }
+.searctInputLight {
+  background-color: #fcf5e7;
+  color: black;
+  border: 1px solid black;
+  height: 30px;
+  width: 100%;
+  font-size: 20px;
+}
 
 .toggle {
   display: none;
@@ -248,10 +291,26 @@
 .heartNotFull {
   font-size: 40px;
   padding: 15px;
+  color: white;
+  cursor: pointer;
 }
 .heartFull {
   font-size: 30px;
   margin: 20px;
+  color: white;
+  cursor: pointer;
+}
+.heartNotFullLight {
+  font-size: 40px;
+  padding: 15px;
+  color: #4a2b10;
+  cursor: pointer;
+}
+.heartFullLight {
+  font-size: 30px;
+  margin: 20px;
+  color: #4a2b10;
+  cursor: pointer;
 }
 @media (max-width: 800px) {
   .sortingAndFiltering {
@@ -264,7 +323,6 @@
     display: block;
     margin: 40px;
     font-size: 20px;
-    
   }
   .toggleContainer {
     display: flex;
@@ -324,7 +382,7 @@
     align-items: center;
     width: 150px;
     padding: 10px 15px;
-   
+
     position: relative;
   }
   .toggleFilterBtn:after {
