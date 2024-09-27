@@ -6,8 +6,10 @@ import { useCookies } from "react-cookie";
 import { UserContext } from "../../components/ContextAPIs/Users/UserContext";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import { ThemeContext } from "../../components/ContextAPIs/Theme/Theme";
+import { useTranslation } from "react-i18next";
 
 export default function Cart() {
+  const { t } = useTranslation();
   const { darkMode } = useContext(ThemeContext);
   const [cookie] = useCookies(["cookie-user"]);
   const { users } = useContext(UserContext);
@@ -34,11 +36,11 @@ export default function Cart() {
               : style.cartEmptyTextLight
           }
         >
-          Your cart is empty
+          {t("cart.emptytext")}
         </h1>
         <NavLink to="/products">
           <h2 className={darkMode === "light" ? "" : style.continueTexttLight}>
-            Continue shopping
+            {t("cart.davamatext")}
           </h2>
         </NavLink>
         <hr className={darkMode === "light" ? style.hr1 : style.hr1Light}></hr>
@@ -58,10 +60,12 @@ export default function Cart() {
           darkMode === "dark" ? style.cartContainer : style.cartContainerLight
         }
       >
-        <h1>Review your cart ({totalUniqueItems})</h1>
+        <h1>
+          {t("cart.reviewtext")} ({totalUniqueItems})
+        </h1>
         <ul>
           {items.map((item) => (
-            <div key={item.id}>
+            <div key={item.id} className={style.ulContainer}>
               <hr
                 className={darkMode === "light" ? style.hr1 : style.hr1Light}
               ></hr>
@@ -114,9 +118,14 @@ export default function Cart() {
                     <div className={style.wishRemove}>
                       <div
                         className={style.removeButton}
-                        onClick={() => removeItem(item.id)}
+                        onClick={() => {
+                          removeItem(item.id);
+                          toast.success(
+                            "The product is remove from cart successfully"
+                          );
+                        }}
                       >
-                        <span>Remove</span>
+                        <span>{t("cart.remove")}</span>
                       </div>
                     </div>
                   </div>
@@ -127,11 +136,11 @@ export default function Cart() {
         </ul>
         <div className={style.checkContainer}>
           <div className={style.total}>
-            <h2>Total</h2>
+            <h2>{t("cart.total")}</h2>
             <h1>{cartTotal}.00 AZN</h1>
           </div>
           <div className={style.checkBtn} onClick={manageCheckOut}>
-            Check Out
+            {t("cart.checkout")}
           </div>
         </div>
       </div>

@@ -1,26 +1,32 @@
 {
   "translation": {
     "header": {
+      "hello": "Salam",
       "login": "Daxil olun",
       "registration": "Qeydiyyatdan keçin",
       "home": "Ana səhifə",
       "about": "Haqqımızda",
       "shop": "Mağaza",
-      "contact": "Bizimlə əlaqə"
+      "contact": "Bizimlə əlaqə",
+      "dashboard": "Admin Panel",
+      "profile": "Profil"
     },
     "home": {
       "header": {
         "1": {
           "title": "Ağ Şokoladlı Qurbağa",
-          "text": "Süd, Qaranlıq və indi Ağ! Sehrbazlıq Dünyasını canlandıran yeni sehrbazlıq təqdim edirik. Bu Ağ Şokolad Qurbağası orijinal Honeydukes qutusunda qablaşdırılır!"
+          "text": "Süd, Qaranlıq və indi Ağ! Sehrbazlıq Dünyasını canlandıran yeni sehrbazlıq təqdim edirik. Bu Ağ Şokolad Qurbağası orijinal Honeydukes qutusunda qablaşdırılır!",
+          "image": "https://harrypottershop.co.uk/cdn/shop/files/WhiteChocFrog_Banner_2048x.jpg?v=1720019583"
         },
         "2": {
           "title": "Harry Potter Səyahəti",
-          "text": "Sehrbazlar dünyasının sehrli nəqliyyatından ilhamlanan bu eksklüziv Harry Potter Səyahət kolleksiyası ilə getdiyiniz yerdə özünüzlə bir az sehr götürün!"
+          "text": "Sehrbazlar dünyasının sehrli nəqliyyatından ilhamlanan bu eksklüziv Harry Potter Səyahət kolleksiyası ilə getdiyiniz yerdə özünüzlə bir az sehr götürün!",
+          "image": "https://harrypottershop.co.uk/cdn/shop/files/Travel_Banner_2048x.jpg?v=1714574626"
         },
         "3": {
           "title": "Sayt üzrə 20% Endirim",
-          "text": "Doğum günün mübarək Harry! Harry Potter Fan Club üzvləri indi kassa zamanı BIRTHDAE20 kodunu daxil etməklə saytdakı hər şeyə 20% qənaət edə bilərlər! Üzv deyilsiniz? Bu gün qoşulun!"
+          "text": "Doğum günün mübarək Harry! Harry Potter Fan Club üzvləri indi kassa zamanı BIRTHDAE20 kodunu daxil etməklə saytdakı hər şeyə 20% qənaət edə bilərlər! Üzv deyilsiniz? Bu gün qoşulun!",
+          "image": "https://harrypottershop.co.uk/cdn/shop/files/Harry-20-Banner2_2048x.jpg?v=1689758003"
         }
       },
       "categories-section": {
@@ -33,7 +39,8 @@
         "title": "Öz Baqajınızı Yaradın!",
         "text": "Mükəmməl hədiyyə üçün gözəl təqdim olunan siz indi öz Hogwarts məktəb baqajınızı yarada və onu öz əlinizlə seçdiyiniz qeyri-adi Harry Potter malları ilə ağzına qədər doldura bilərsiniz."
       },
-      "new-in": "Yeni Gələnlər"
+      "new-in": "Yeni Gələnlər",
+      "shop-now": "İNDİ ALIŞ-VERİŞ ET"
     },
     "footer": {
       "pages-names": {
@@ -45,7 +52,8 @@
       "text": {
         "text1": "Xəbərlər, hadisələr və təkliflər üçün qeydiyyatdan keçin",
         "text2": "HARRY POTTER, WIZARDING WORLD və əlaqəli ticarət nişanları, simvollar, adlar və işarələr TM və © Warner Bros. Entertainment Inc. Bütün hüquqlar qorunur."
-      }
+      },
+      "signupnow": "İNDİ QEYDİYYATDAN KEÇİN"
     },
     "about-us": {
       "headtext": "Haqqımızda",
@@ -63,9 +71,21 @@
       "title": "Bütün Məhsullar",
       "text": "İstənilən cadugər və ya sehrbazı öz kolleksiyasına əlavə etmək üçün hədiyyə etmək üçün mükəmməl olan sifarişli kolleksiya əşyaları, unikal çubuqlar, suvenirlər, ləzzətli qənnadı məmulatları, fanatların sevimliləri və s. daxil olmaqla ən çox sevilən Harry Potter məhsullarını kəşf edin.",
       "sort": "Sırala",
-      "filter-by": "Filterlə"
+      "filter-by": "Filterlə",
+      "show-filters": "Filterləri göstər",
+      "products": "Məhsul",
+      "price": "Qiymət (Azdan Çoxa)",
+      "price2": "Qiymət (Çoxdan Aza)",
+      "load-more": "Daha Çox",
+      "typesearch": "Axtarış etmək üçün yazın",
+      "addcart": "SƏBƏTƏ ƏLAVƏ ET",
+      "removewishlist": "Favoritlərdən çıxart",
+      "addwishlist": "Favoritlərə əlavə et",
+      "readmore": "DAHA ÇOX",
+      "readless": "DAHA AZ"
     },
     "contact-us": {
+      "contact-us": "Bizimlə əlaqə",
       "text1": "Standart göndərmə ilə edilən sifarişlərin işlənməsi və göndərilməsi 2-3 gün çəkə bilər. Zəhmət olmasa çatdırılma üçün əlavə vaxt verin.",
       "text2": "Sualınızın cavablandırılıb-cavablandırılmadığını öyrənmək üçün bizimlə əlaqə saxlamazdan əvvəl",
       "text3": "tez-tez verilən suallar bölməmizi",
@@ -106,7 +126,8 @@
       "pass": "Şifrə",
       "signup": "QEYDİYYATDAN KEÇİN",
       "accounttext": "Hesabınız var?",
-      "login": "DAXİL OLUN"
+      "login": "DAXİL OLUN",
+      "sameemail": "Bu email ilə artıq qeydiyyatdan keçmisiniz"
     },
     "thankyou": {
       "title": "Təşəkkür edirik",
@@ -124,10 +145,13 @@
     "dashboard": {
       "addproduct": {
         "title": "Başlıq",
+        "title-az": "Başlıq(az)",
         "url": "Şəkillərin linkləri",
         "price": "Qiymət",
         "cat": "Kateqoriyalar",
+        "cat-az": "Kateqoriyalar(az)",
         "desc": "Təsvir",
+        "desc-az": "Təsvir(az)",
         "addproduct": "MƏHSUL ƏLAVƏ ET"
       },
       "editproduct": {
@@ -142,7 +166,7 @@
     "404": {
       "text1": "İtmisiniz?",
       "text2": "Bir az geri qayıdın və ya ana səhifəyə qayıdın.",
-      "button":"SEHRBAZLIQ DÜNYASINA QAYIT"
+      "button": "SEHRBAZLIQ DÜNYASINA QAYIT"
     }
   }
 }

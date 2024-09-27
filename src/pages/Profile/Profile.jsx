@@ -8,9 +8,10 @@ import supabase from "../../supabase";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import { ThemeContext } from "../../components/ContextAPIs/Theme/Theme";
+import { useTranslation } from "react-i18next";
 export default function Profile() {
   const { darkMode } = useContext(ThemeContext);
-
+  const { t } = useTranslation();
   const [cookie, , removeCookie] = useCookies(["cookie-user"]);
   const { emptyCart } = useCart();
   const { emptyWishlist } = useWishlist();
@@ -60,7 +61,6 @@ export default function Profile() {
     removeCookie("cookie-user");
     emptyCart();
     emptyWishlist();
-    window.location.reload();
     toast.success("Logged out successfully!");
     navigate("/");
   };
@@ -72,18 +72,18 @@ export default function Profile() {
       <div className={style.formContainer}>
         <div className={style.userDetails}>
           <div className={darkMode === "dark" ? style.text : style.textLight}>
-            User details
+            {t("profile.title")}
           </div>
           <div className={style.usernameText}>
-            <p>Username:</p> <span>{user?.username}</span>
+            <p>{t("profile.username")}:</p> <span>{user?.username}</span>
           </div>
           <div className={style.emailText}>
-            <p>Email:</p> <span>{user?.email}</span>
+            <p>{t("profile.email")}:</p> <span>{user?.email}</span>
           </div>
         </div>
         <form className={style.form} onSubmit={handleSubmit}>
           <div className={style.name}>
-            <label for="username">Username</label>
+            <label for="username">{t("profile.username")}</label>
             <input
               type="text"
               name="username"
@@ -93,7 +93,7 @@ export default function Profile() {
           </div>
 
           <div className={style.email}>
-            <label for="email">Email</label>
+            <label for="email">{t("profile.email")}</label>
             <input
               type="text"
               name="email"
@@ -102,7 +102,7 @@ export default function Profile() {
             />
           </div>
           <div className={style.message}>
-            <label for="password">Password</label>
+            <label for="password">{t("profile.password")}</label>
             <input
               type="password"
               name="password"
@@ -112,12 +112,12 @@ export default function Profile() {
           </div>
           <div className={style.btnContainer}>
             <button type="submit" className={style.btn}>
-              Update
+              {t("profile.update")}
             </button>
           </div>
           <div className={style.btnContainer}>
             <div onClick={handleLogout} className={style.btn}>
-              Log Out
+              {t("profile.logout")}
             </div>
           </div>
         </form>

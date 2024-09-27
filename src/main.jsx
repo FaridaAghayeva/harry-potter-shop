@@ -10,21 +10,25 @@ import { WishlistProvider } from "react-use-wishlist";
 import { UserProvider } from "./components/ContextAPIs/Users/UserContext.jsx";
 import { ToastContainer } from "react-toastify";
 import { ThemeProvider } from "./components/ContextAPIs/Theme/Theme.jsx";
+import "./i18n.js";
+import { LanguageProvider } from "./components/ContextAPIs/Language/Language.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <ThemeProvider>
-    <UserProvider>
-      <CartProvider>
-        <WishlistProvider>
-          <Provider store={store}>
-            <FAQProvider>
-              <HeadProvider>
-                <App />
-              </HeadProvider>
-            </FAQProvider>
-          </Provider>
-        </WishlistProvider>
-      </CartProvider>
-    </UserProvider>
-  </ThemeProvider>
+  <LanguageProvider>
+    <ThemeProvider>
+      <UserProvider>
+        <CartProvider>
+          <WishlistProvider>
+            <Provider store={store}>
+              <FAQProvider>
+                <HeadProvider>
+                  <App />
+                </HeadProvider>
+              </FAQProvider>
+            </Provider>
+          </WishlistProvider>
+        </CartProvider>
+      </UserProvider>
+    </ThemeProvider>
+  </LanguageProvider>
 );

@@ -6,9 +6,11 @@ import { fetchProducts } from "../../../components/redux/productsSlicer";
 import { toast } from "react-toastify";
 import supabase from "../../../supabase";
 import { ThemeContext } from "../../../components/ContextAPIs/Theme/Theme";
+import { useTranslation } from "react-i18next";
 
 export default function EditPage() {
   const { darkMode } = useContext(ThemeContext);
+  const { t } = useTranslation();
 
   const { id } = useParams();
   const editId = parseInt(id, 10);
@@ -85,36 +87,36 @@ export default function EditPage() {
     >
       <div className={style.container1}>
         <div className={style.title}>
-          <p>Title</p>
+          <p>{t("dashboard.editproduct.title")}</p>
           <span>{product?.title}</span>
         </div>
         <hr />
         <div className={style.image}>
-          <p>Images</p>
+          <p>{t("dashboard.editproduct.imgs")}</p>
           {product?.images?.map((item, index) => (
             <img src={item} key={index} alt="product" />
           ))}
         </div>
         <hr />
         <div className={style.price}>
-          <p>Price</p>
+          <p>{t("dashboard.editproduct.price")}</p>
           <span>{product?.price}.00 AZN</span>
         </div>
         <hr />
         <div className={style.categories}>
-          <p>Categories</p>
+          <p>{t("dashboard.editproduct.cat")}</p>
           <span>{product?.categories.join(",")}</span>
         </div>
         <hr />
         <div className={style.text}>
-          <p>Description</p>
+          <p>{t("dashboard.editproduct.desc")}</p>
           <span>{product?.text}</span>
         </div>
       </div>
 
       <form onSubmit={submitChanges} className={style.container2}>
         <div className={style.item}>
-          <label htmlFor="title">Title</label>
+          <label htmlFor="title">{t("dashboard.editproduct.title")}</label>
           <input
             type="text"
             name="title"
@@ -125,7 +127,7 @@ export default function EditPage() {
         </div>
 
         <div className={style.item}>
-          <label htmlFor="images">Images' URLs</label>
+          <label htmlFor="images">{t("dashboard.editproduct.imgs")}</label>
           <textarea
             name="images"
             id="images"
@@ -135,7 +137,7 @@ export default function EditPage() {
         </div>
 
         <div className={style.item}>
-          <label htmlFor="price">Price</label>
+          <label htmlFor="price">{t("dashboard.editproduct.price")}</label>
           <input
             type="text"
             name="price"
@@ -146,7 +148,7 @@ export default function EditPage() {
         </div>
 
         <div className={style.item}>
-          <label htmlFor="categories">Categories</label>
+          <label htmlFor="categories">{t("dashboard.editproduct.cat")}</label>
           <textarea
             name="categories"
             id="categories"
@@ -156,7 +158,7 @@ export default function EditPage() {
         </div>
 
         <div className={style.item}>
-          <label htmlFor="text">Description</label>
+          <label htmlFor="text">{t("dashboard.editproduct.desc")}</label>
           <textarea
             name="text"
             id="text"
@@ -166,7 +168,7 @@ export default function EditPage() {
         </div>
 
         <button type="submit" className={style.btn}>
-          Update
+          {t("dashboard.editproduct.update")}
         </button>
       </form>
     </div>

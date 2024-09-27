@@ -5,7 +5,10 @@ import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useCart } from "react-use-cart";
 import { ThemeContext } from "../../components/ContextAPIs/Theme/Theme";
+import { useTranslation } from "react-i18next";
 export default function Wishlist() {
+  const { t } = useTranslation();
+
   const { darkMode } = useContext(ThemeContext);
   const { addItem } = useCart();
   const { isWishlistEmpty, totalWishlistItems, items, removeWishlistItem } =
@@ -21,11 +24,11 @@ export default function Wishlist() {
               : style.wishlistEmptyTextLight
           }
         >
-          Your wishlist is empty
+          {t("wishlist.emptytext")}
         </h1>
         <NavLink to="/products">
           <h2 className={darkMode === "light" ? "" : style.continueTexttLight}>
-            Continue shopping
+            {t("wishlist.davamatext")}
           </h2>
         </NavLink>
         <hr className={darkMode === "light" ? style.hr1 : style.hr1Light}></hr>
@@ -35,7 +38,7 @@ export default function Wishlist() {
   return (
     <div className={style.wishlistContainer}>
       <h1 className={darkMode === "dark" ? "" : style.titleh2Light}>
-        Wishlist ({totalWishlistItems})
+        {t("wishlist.wishlist")} ({totalWishlistItems})
       </h1>
 
       <div className={style.liItems}>
@@ -60,7 +63,7 @@ export default function Wishlist() {
                   );
                 }}
               >
-                Remove
+                {t("wishlist.remove")}
               </div>
               <div
                 onClick={() => {

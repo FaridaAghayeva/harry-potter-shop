@@ -3,9 +3,11 @@ import style from "../AddPage/AddPage.module.css";
 import supabase from "../../../supabase";
 import { toast } from "react-toastify";
 import { ThemeContext } from "../../../components/ContextAPIs/Theme/Theme";
+import { useTranslation } from "react-i18next";
 
 export default function AddPage() {
   const { darkMode } = useContext(ThemeContext);
+  const { t } = useTranslation();
 
   const [formdata, setFormdata] = useState({
     title: "",
@@ -58,7 +60,7 @@ export default function AddPage() {
           htmlFor="title"
           className={darkMode === "dark" ? style.input : style.inputLight}
         >
-          Title
+          {t("dashboard.addproduct.title")}
         </label>
         <input
           type="text"
@@ -76,7 +78,7 @@ export default function AddPage() {
           htmlFor="images"
           className={darkMode === "dark" ? style.input : style.inputLight}
         >
-          Images' URLs
+          {t("dashboard.addproduct.url")}
         </label>
         <textarea
           name="images"
@@ -93,7 +95,7 @@ export default function AddPage() {
           htmlFor="price"
           className={darkMode === "dark" ? style.input : style.inputLight}
         >
-          Price
+          {t("dashboard.addproduct.price")}
         </label>
         <input
           type="text"
@@ -111,7 +113,7 @@ export default function AddPage() {
           htmlFor="categories"
           className={darkMode === "dark" ? style.input : style.inputLight}
         >
-          Categories
+          {t("dashboard.addproduct.cat")}
         </label>
         <textarea
           name="categories"
@@ -128,7 +130,7 @@ export default function AddPage() {
           htmlFor="text"
           className={darkMode === "dark" ? style.input : style.inputLight}
         >
-          Description
+          {t("dashboard.addproduct.desc")}
         </label>
         <textarea
           name="text"
@@ -141,7 +143,7 @@ export default function AddPage() {
       </div>
 
       <button type="submit" className={style.btn}>
-        Add Product
+        {t("dashboard.addproduct.addproduct")}
       </button>
     </form>
   );

@@ -37,9 +37,9 @@
   background-size: auto 100%;
   border: none;
   height: 26px;
-  width: 100px;
+  width: fit-content;
   padding: 10px;
- 
+
   font-size: 19px;
   font-weight: 600;
   line-height: 1.4em;

@@ -224,9 +224,16 @@
     margin: auto;
     padding: 0;
   }
+  .formContainerLight {
+    margin: auto;
+    padding: 0;
+  }
 }
 @media (max-width: 840px) {
   .formContainer {
+    width: fit-content;
+  }
+  .formContainerLight {
     width: fit-content;
   }
   .inside {

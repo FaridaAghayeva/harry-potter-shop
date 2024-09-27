@@ -9,9 +9,14 @@ import { useCookies } from "react-cookie";
 import { Events } from "react-scroll";
 import { UserContext } from "../../components/ContextAPIs/Users/UserContext";
 import { ThemeContext } from "../ContextAPIs/Theme/Theme";
+import { useTranslation } from "react-i18next";
+import { LanguageContext } from "../../components/ContextAPIs/Language/Language";
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation();
+
   const { darkMode, toggleTheme } = useContext(ThemeContext);
+  const { lang: currentLang, toggleLang } = useContext(LanguageContext);
   const [isVisible, setVisible] = useState(false);
   const [cookie] = useCookies("cookie-user");
   const [isSticky, setIsSticky] = useState(false);
@@ -24,6 +29,12 @@ export default function Navbar() {
   function displayToggleMenu() {
     setVisible(!isVisible);
   }
+
+  const handleLanguageToggle = () => {
+    const newLang = currentLang === "en" ? "az" : "en";
+    i18n.changeLanguage(newLang);
+    toggleLang();
+  };
 
   useEffect(() => {
     Events.scrollEvent.register("begin", () => setIsSticky(true));
@@ -53,19 +64,21 @@ export default function Navbar() {
           {cookie["cookie-user"] !== undefined ? (
             <NavLink to="/profile">
               <div className={style.userIcon}>
-                <p>Hello, {user?.username}</p>
+                <p>
+                  {t("header.hello")}, {user?.username}
+                </p>
                 <FaUser />
               </div>
             </NavLink>
           ) : (
             <>
-              <NavLink to="/login">Login</NavLink>
-              <NavLink to="/register">Registration</NavLink>
+              <NavLink to="/login">{t("header.login")}</NavLink>
+              <NavLink to="/register">{t("header.registration")}</NavLink>
             </>
           )}
           {cookie["cookie-user"] === "83fd0571-a42b-4ea6-96b5-a940eda115e5" && (
             <NavLink to="/admin-panel">
-              <div className={style.dashboard}>Dashboard</div>
+              <div className={style.dashboard}>{t("header.dashboard")}</div>
             </NavLink>
           )}
 
@@ -79,6 +92,16 @@ export default function Navbar() {
             alt="theme toggle"
             onClick={toggleTheme}
           />
+          <div className={style.flags}>
+            <span
+              className={
+                currentLang === "en"
+                  ? `${style.flag1} fi fi-az`
+                  : `${style.flag2} fi fi-gb`
+              }
+              onClick={handleLanguageToggle}
+            ></span>
+          </div>
         </div>
       </div>
 
@@ -146,7 +169,7 @@ export default function Navbar() {
               }}
             >
               <span className={darkMode === "dark" ? style.darkSpan : ""}>
-                Home
+                {t("header.home")}
               </span>
             </NavLink>
             <span>
@@ -161,7 +184,7 @@ export default function Navbar() {
               }}
             >
               <span className={darkMode === "dark" ? style.darkSpan : ""}>
-                About Us
+                {t("header.about")}
               </span>
             </NavLink>
 
@@ -177,7 +200,7 @@ export default function Navbar() {
               }}
             >
               <span className={darkMode === "dark" ? style.darkSpan : ""}>
-                Shop
+                {t("header.shop")}
               </span>
             </NavLink>
             <span>
@@ -192,7 +215,7 @@ export default function Navbar() {
               }}
             >
               <span className={darkMode === "dark" ? style.darkSpan : ""}>
-                Contact Us
+                {t("header.contact")}
               </span>
             </NavLink>
             <span>

@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import style from "../Register/Register.module.css";
 import { NavLink } from "react-router-dom";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import supabase from "../../supabase";
 import { useCookies } from "react-cookie";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
+import { LanguageContext } from "../../components/ContextAPIs/Language/Language";
 
 export default function Register() {
+  const { t, i18n } = useTranslation();
+  const { lang: currentLang, toggleLang } = useContext(LanguageContext);
+
   const [formdata, setFormdata] = useState({
     username: "",
     email: "",
@@ -20,7 +25,11 @@ export default function Register() {
       [name]: value,
     });
   };
-
+  const handleLanguageToggle = () => {
+    const newLang = currentLang === "en" ? "az" : "en";
+    i18n.changeLanguage(newLang);
+    toggleLang();
+  };
   const registerUser = async () => {
     try {
       const token = crypto.randomUUID();
@@ -60,13 +69,13 @@ export default function Register() {
           <div className={style.hrs}>
             <div className={style.sign}>
               <div className={style.edges}></div>
-              <h1 className={style.signUp}>Sign Up</h1>
+              <h1 className={style.signUp}>{t("signup.title")}</h1>
               <div className={style.edges}></div>
             </div>
           </div>
         </div>
         <div className={style.enjoyText}>
-          <p>Enjoy magical features.</p>
+          <p>{t("signup.text")}</p>
         </div>
         <form
           className={style.form}
@@ -76,7 +85,7 @@ export default function Register() {
           }}
         >
           <div className={style.inputContainer}>
-            <label htmlFor="username">USERNAME</label>
+            <label htmlFor="username">{t("signup.username")}</label>
             <input
               type="text"
               name="username"
@@ -88,7 +97,7 @@ export default function Register() {
             />
           </div>
           <div className={style.inputContainer}>
-            <label htmlFor="email">EMAIL ADDRESS</label>
+            <label htmlFor="email">{t("signup.email")}</label>
             <input
               type="email"
               name="email"
@@ -101,7 +110,7 @@ export default function Register() {
           </div>
           {/* <div>{error ? "error" : ""}</div> */}
           <div className={style.inputContainer}>
-            <label htmlFor="password">PASSWORD</label>
+            <label htmlFor="password">{t("signup.pass")}</label>
             <input
               type="password"
               name="password"
@@ -113,18 +122,24 @@ export default function Register() {
             />
           </div>
           <button type="submit" className={style.signUpBtn}>
-            SIGN UP
+            {t("signup.signup")}
           </button>
           <hr></hr>
           <div>
-            <h2 className={style.anAccount}>Already have an account?</h2>
+            <h2 className={style.anAccount}>{t("signup.accounttext")}</h2>
           </div>
           <NavLink to="/login">
-            <div className={style.logInBtn}>LOG IN</div>
+            <div className={style.logInBtn}>{t("signup.login")}</div>
           </NavLink>
           <div className={style.flags}>
-            <span className={`${style.flag1} fi fi-az`}></span>
-            <span className={`${style.flag2} fi fi-gb`}></span>
+            <span
+              className={
+                currentLang === "en"
+                  ? `${style.flag1} fi fi-az`
+                  : `${style.flag2} fi fi-gb`
+              }
+              onClick={handleLanguageToggle}
+            ></span>
           </div>
         </form>
       </div>

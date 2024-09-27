@@ -112,3 +112,9 @@
   justify-content: center;
   margin: auto;
 }
+
+@media (max-width: 800px) {
+  .formContainer {
+    padding: 50px;
+  }
+}

@@ -93,6 +93,7 @@
   font-size: 20px;
   border: 3px solid #a85;
   padding: 5px 20px;
+  width: 70px;
 }
 
 .wishRemove {
@@ -189,4 +190,27 @@
   top: 0;
   bottom: 0;
   right: 100%;
+}
+
+@media (max-width: 800px) {
+  .addQuantity {
+    display: flex;
+    flex-direction: column;
+  }
+  .imgContainer img,
+  .imgContainerLight img {
+    width: 200px;
+  }
+}
+@media (max-width: 500px) {
+  .liContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .cartContainer {
+    margin: 50px;
+  }
+  .cartContainerLight {
+    margin: 50px;
+  }
 }

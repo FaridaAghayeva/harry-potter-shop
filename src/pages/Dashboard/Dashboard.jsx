@@ -8,8 +8,10 @@ import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 import supabase from "../../supabase";
 import { ThemeContext } from "../../components/ContextAPIs/Theme/Theme";
+import { useTranslation } from "react-i18next";
 
 export default function Dashboard() {
+  const { t } = useTranslation();
   const { darkMode } = useContext(ThemeContext);
   const dispatch = useDispatch();
   const data = useSelector((state) => state);
@@ -37,7 +39,9 @@ export default function Dashboard() {
       }
     >
       <div className={style.addbtn}>
-        <NavLink to="/add-product">Add Product</NavLink>
+        <NavLink to="/add-product">
+          {t("dashboard.addproduct.addproduct")}
+        </NavLink>
       </div>
       <div className={style.container}>
         {data?.products?.data?.map((item, index) => {

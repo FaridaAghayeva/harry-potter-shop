@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import style from "../ToggleFilterMenu/ToggleFilterMenu.module.css";
 import { ThemeContext } from "../../../../../components/ContextAPIs/Theme/Theme";
+import { useTranslation } from "react-i18next";
 
 export default function ToggleFilterMenu({
   searchItem,
@@ -12,9 +13,16 @@ export default function ToggleFilterMenu({
   displayFilters,
 }) {
   const { darkMode } = useContext(ThemeContext);
+  const { t } = useTranslation();
 
   return (
-    <div className={style.sortingAndFiltering}>
+    <div
+      className={
+        darkMode === "light"
+          ? style.sortingAndFiltering
+          : style.sortingAndFilteringLight
+      }
+    >
       <div onClick={displayFilters}>
         <span className={style.filters__close}>
           <i className={style.icon_close}></i>
@@ -29,12 +37,8 @@ export default function ToggleFilterMenu({
           className={style.searctInput}
         />
       </div>
-      <div
-        className={
-          darkMode === "light" ? style.sortContainer : style.sortContainerLight
-        }
-      >
-        <h1 className={style.sortContainerLight}>Sort By</h1>
+      <div className={style.sortContainer}>
+        <h1>{t("products.sort")}</h1>
         <div className={style.sorts}>
           <div>
             <input
@@ -44,7 +48,7 @@ export default function ToggleFilterMenu({
               className={style.radioInput}
               checked={sortOption === "asc"}
             />
-            <label>Price (Low To High)</label>
+            <label>{t("products.price")}</label>
           </div>
           <div>
             <input
@@ -54,7 +58,7 @@ export default function ToggleFilterMenu({
               className={style.radioInput}
               checked={sortOption === "desc"}
             />
-            <label>Price (High To Low)</label>
+            <label>{t("products.price2")}</label>
           </div>
           <div>
             <input
@@ -80,7 +84,7 @@ export default function ToggleFilterMenu({
       </div>
       <hr />
       <div className={style.filterContainer}>
-        <h1>Filter By</h1>
+        <h1>{t("products.filter-by")}</h1>
         {uniqueCategories.map((category, i) => (
           <div key={i} className={style.filters}>
             <input

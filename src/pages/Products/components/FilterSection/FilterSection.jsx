@@ -6,9 +6,11 @@ import Product from "../Product/Product";
 import style from "../ProductsAll/ProductsAll.module.css";
 import ToggleFilterMenu from "./ToggleFilterMenu/ToggleFilterMenu";
 import { ThemeContext } from "../../../../components/ContextAPIs/Theme/Theme";
+import { useTranslation } from "react-i18next";
 
 export default function FilterSection() {
   const { darkMode } = useContext(ThemeContext);
+  const { t } = useTranslation();
 
   const dispatch = useDispatch();
   const data = useSelector((state) => state);
@@ -118,10 +120,16 @@ export default function FilterSection() {
             ) : (
               <div className={style.toggleContainer}>
                 <div className={style.toggleFilterBtn} onClick={displayFilters}>
-                  Show Filters
+                  {t("products.show-filters")}
                 </div>
-                <span className={style.collection__total}>
-                  {data?.products?.data?.length} Products
+                <span
+                  className={
+                    darkMode === "light"
+                      ? style.collection__total
+                      : style.collection__totalLight
+                  }
+                >
+                  {data?.products?.data?.length} {t("products.products")}
                 </span>
               </div>
             )}
@@ -133,7 +141,7 @@ export default function FilterSection() {
                 type="text"
                 value={searchItem}
                 onChange={handleInputChange}
-                placeholder="Type to search"
+                placeholder={t("products.typesearch")}
                 className={
                   darkMode === "light"
                     ? style.searctInput
@@ -148,7 +156,7 @@ export default function FilterSection() {
                   : style.sortContainerLight
               }
             >
-              <h1>Sort By</h1>
+              <h1>{t("products.sort")}</h1>
               <div className={style.sorts}>
                 <div>
                   <input
@@ -158,7 +166,7 @@ export default function FilterSection() {
                     className={style.radioInput}
                     checked={sortOption === "asc"}
                   />
-                  <label>Price (Low To High)</label>
+                  <label>{t("products.price")}</label>
                 </div>
                 <div>
                   <input
@@ -168,7 +176,7 @@ export default function FilterSection() {
                     className={style.radioInput}
                     checked={sortOption === "desc"}
                   />
-                  <label>Price (High To Low)</label>
+                  <label>{t("products.price2")}</label>
                 </div>
                 <div>
                   <input
@@ -200,7 +208,7 @@ export default function FilterSection() {
                   : style.filterContainerLight
               }
             >
-              <h1>Filter By</h1>
+              <h1>{t("products.filter-by")}</h1>
               {uniqueCategories.map((category, i) => (
                 <div key={i} className={style.filters}>
                   <input
@@ -231,7 +239,7 @@ export default function FilterSection() {
       )}
       <div className={style.loadContainer}>
         <div onClick={showMoreItems} className={style.loadBtn}>
-          Load More
+          {t("products.load-more")}
         </div>
       </div>
     </div>

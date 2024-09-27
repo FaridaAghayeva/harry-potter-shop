@@ -79,7 +79,7 @@
   font-weight: 600;
   line-height: 1.4em;
   position: relative;
-  width: 100px;
+  width: fit-content;
   display: flex;
   text-align: center;
   justify-content: center;

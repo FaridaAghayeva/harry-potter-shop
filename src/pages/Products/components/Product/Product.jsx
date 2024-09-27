@@ -7,8 +7,10 @@ import { FaHeart } from "react-icons/fa";
 import { useWishlist } from "react-use-wishlist";
 import { toast } from "react-toastify";
 import { ThemeContext } from "../../../../components/ContextAPIs/Theme/Theme";
+import { useTranslation } from "react-i18next";
 
 export default function Product({ price, title, image, product, id }) {
+  const { t } = useTranslation();
   const { darkMode } = useContext(ThemeContext);
   const { addItem } = useCart();
   const { addWishlistItem, removeWishlistItem, inWishlist } = useWishlist();
@@ -70,7 +72,7 @@ export default function Product({ price, title, image, product, id }) {
             toast.success("Product is added to cart successfully!");
           }}
         >
-          ADD TO CART
+          {t("products.addcart")}
         </div>
       </div>
     </div>

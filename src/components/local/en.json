@@ -1,0 +1,175 @@
+{
+  "translation": {
+    "header": {
+      "hello": "Hello",
+      "login": "Login",
+      "registration": "Register",
+      "home": "Home",
+      "about": "About Us",
+      "shop": "Shop",
+      "contact": "Contact Us",
+      "dashboard": "Dashboard",
+      "profile": "Profile"
+    },
+    "home": {
+      "header": {
+        "1": {
+          "title": "White Chocolate Frog",
+          "text": "Milk, Dark, and now White! Introducing the new magical delight that brings the Wizarding World to life. This White Chocolate Frog comes packaged in the original Honeydukes box!",
+          "image": "https://harrypottershop.co.uk/cdn/shop/files/WhiteChocFrog_Banner_2048x.jpg?v=1720019583"
+        },
+        "2": {
+          "title": "Harry Potter Travel",
+          "text": "Take a little bit of magic with you wherever you go with this exclusive Harry Potter Travel collection inspired by the magical transportation of the Wizarding World!",
+          "image": "https://harrypottershop.co.uk/cdn/shop/files/Travel_Banner_2048x.jpg?v=1714574626"
+        },
+        "3": {
+          "title": "20% Off Sitewide",
+          "text": "Happee Birthdae Harry! Harry Potter Fan Club members can now save 20% on everything sitewide by entering the code BIRTHDAE20 at checkout! Not a member? Join today!",
+          "image": "https://harrypottershop.co.uk/cdn/shop/files/Harry-20-Banner2_2048x.jpg?v=1689758003"
+        }
+      },
+      "categories-section": {
+        "1": "Wand Shop",
+        "2": "Trunk Station",
+        "3": "Clothing Station",
+        "4": "Sweet Trolley"
+      },
+      "trunk-section": {
+        "title": "Create Your Own Trunk!",
+        "text": "Beautifully presented for the perfect gift, you can now create your own Hogwarts school trunk and fill it to the brim with handpicked, exclusive Harry Potter merchandise."
+      },
+      "new-in": "New Arrivals",
+      "shop-now": "SHOP NOW"
+    },
+    "footer": {
+      "pages-names": {
+        "about": "About Us",
+        "customer-service": "Customer Service",
+        "contact-us": "Contact Us",
+        "FAQs": "FAQs"
+      },
+      "text": {
+        "text1": "Sign up for news, events, and offers",
+        "text2": "HARRY POTTER, WIZARDING WORLD and related trademarks, characters, names, and indicia are TM and © Warner Bros. Entertainment Inc. All rights reserved."
+      },
+      "signupnow": "SIGN UP NOW"
+    },
+    "about-us": {
+      "headtext": "About Us",
+      "text1": "Harry Potter Shop is the official online store for all your wizarding needs, with stock from Warner Bros. Studio Tour London, the Harry Potter store at Platform 9 ¾, and Harry Potter New York, providing a magical shopping experience.",
+      "text2": "Explore the largest collection of Harry Potter and Fantastic Beasts merchandise in the world, from fan favorites and brand collaborations to exclusive designs and unique personalization. With over 1000 items, every fan will find something magical to add to their collection.",
+      "text3": "Stay up to date on all the latest Harry Potter Shop news as well as new and exclusive product launches by signing up to our newsletter!",
+      "locations": {
+        "1": "The Biggest Harry Potter Shop",
+        "2": "Filch’s Emporium of Confiscated Goods",
+        "3": "Harry Potter Store New York",
+        "4": "Harry Potter Store at Platform 9 ¾"
+      }
+    },
+    "products": {
+      "title": "All Products",
+      "text": "Explore a selection of best-loved Harry Potter products, including bespoke collectables, unique wands, souvenirs, delicious confectionery, fan-favourites and more, perfect for gifting any witch or wizard to add to their collection",
+      "sort": "Sort by",
+      "filter-by": "Filter by",
+      "show-filters": "Show Filters",
+      "products": "Products",
+      "price": "Price (Low To High)",
+      "price2": "Price (High To Low)",
+      "load-more": "Load More",
+      "typesearch": "Type to search",
+      "addcart": "ADD TO CART",
+      "removewishlist": "Remove from Wishlist",
+      "addwishlist": "Add to Wishlist",
+      "readmore": "READ MORE",
+      "readless": "READ LESS"
+    },
+    "contact-us": {
+      "contact-us": "Contact Us",
+      "text1": "Orders placed with standard shipping may take 2-3 days to process and ship. Please allow additional time for delivery.",
+      "text2": "Before contacting us, please check",
+      "text3": "our FAQs section",
+      "text4": "to see if your question has been answered.",
+      "firstname": "First Name",
+      "surname": "Last Name",
+      "email": "Email",
+      "message": "Message",
+      "send-message": "SEND MESSAGE"
+    },
+    "wishlist": {
+      "emptytext": "Your wishlist is empty",
+      "davamatext": "Continue Shopping",
+      "remove": "REMOVE",
+      "wishlist": "Wishlist"
+    },
+    "cart": {
+      "emptytext": "Your cart is empty",
+      "davamatext": "Continue Shopping",
+      "reviewtext": "Review your cart",
+      "remove": "Remove",
+      "total": "Total",
+      "checkout": "CHECK OUT"
+    },
+    "login": {
+      "text": "Login",
+      "email": "Email Address",
+      "password": "Password",
+      "loginbutton": "LOGIN",
+      "accounttext": "Don’t have an account?",
+      "signup": "SIGN UP"
+    },
+    "signup": {
+      "title": "Register",
+      "text": "Enjoy magical features.",
+      "username": "Username",
+      "email": "Email Address",
+      "pass": "Password",
+      "signup": "SIGN UP",
+      "accounttext": "Already have an account?",
+      "login": "LOGIN",
+      "sameemail": "You have already registered with this email"
+    },
+    "thankyou": {
+      "title": "Thank You",
+      "continue": "Continue Shopping",
+      "recommended": "Recommended Products"
+    },
+    "profile": {
+      "title": "User Details",
+      "username": "Username",
+      "email": "Email",
+      "password": "Password",
+      "update": "UPDATE",
+      "logout": "LOG OUT"
+    },
+    "dashboard": {
+      "addproduct": {
+        "title": "Title",
+        "title-az": "Title in az",
+        "url": "Image Links",
+        "price": "Price",
+        "cat": "Categories",
+        "cat-az": "Categories in az",
+        "desc": "Description",
+        "desc-az": "Description in az",
+        "addproduct": "ADD PRODUCT"
+      },
+      "editproduct": {
+        "title": "Title",
+        "title-az": "Title in az",
+        "imgs": "Images",
+        "price": "Price",
+        "cat": "Categories",
+        "cat-az": "Categories in az",
+        "desc": "Description",
+        "desc-az": "Description in az",
+        "update": "UPDATE"
+      }
+    },
+    "404": {
+      "text1": "Oh dear. Are you lost?",
+      "text2": "Come back in a little or return to the homepage.",
+      "button": "BACK TO THE WIZARDING WORLD"
+    }
+  }
+}

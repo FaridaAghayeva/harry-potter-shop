@@ -56,11 +56,24 @@
   }
   .titleResp {
     font-size: 60px;
+    color: #fcf5e7;
   }
   .textResp {
     font-size: 20px;
     letter-spacing: 0.5px;
     line-height: 30px;
     font-weight: bold;
+    color: #fcf5e7;
+  }
+  .titleRespLight {
+    font-size: 60px;
+    color: #4a2b10;
+  }
+  .textRespLight {
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    line-height: 30px;
+    font-weight: bold;
+    color: #4a2b10;
   }
 }

@@ -6,9 +6,11 @@ import { Pagination, Autoplay } from "swiper/modules";
 import { HeadContext } from "../../../../components/ContextAPIs/HeadHome/HeadHome";
 import style from "../HeadSection/HeadSection.module.css";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function HeadSection() {
   const { details } = useContext(HeadContext);
+  const { t, i18n } = useTranslation();
 
   return (
     <div className={style.container}>
@@ -34,7 +36,7 @@ export default function HeadSection() {
                   <div className={style.title}>{item?.title}</div>
                   <div className={style.text}>{item?.text}</div>
                   <NavLink to="/products">
-                    <div className={style.button}>Shop Now</div>
+                    <div className={style.button}>{t("home.shop-now")}</div>
                   </NavLink>
                 </div>
                 <div className={style.textContainer}></div>

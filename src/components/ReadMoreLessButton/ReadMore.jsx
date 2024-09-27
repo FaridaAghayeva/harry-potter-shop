@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import style from "../../components/ReadMoreLessButton/ReadMore.module.css";
 import { ThemeContext } from "../../components/ContextAPIs/Theme/Theme";
+import { useTranslation } from "react-i18next";
 const ReadMore = ({ text, maxLength }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { darkMode } = useContext(ThemeContext);
-
+  const { t } = useTranslation();
   const handleToggle = () => {
     setIsExpanded(!isExpanded);
   };
@@ -20,7 +21,7 @@ const ReadMore = ({ text, maxLength }) => {
       </p>
       {text?.length > maxLength && (
         <button onClick={handleToggle} className={style.btn}>
-          {isExpanded ? "Read Less" : "Read More"}
+          {isExpanded ? t("products.readless") : t("products.readmore")}
         </button>
       )}
     </div>

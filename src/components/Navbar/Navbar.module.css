@@ -3,7 +3,7 @@
   background-color: #4a2b10;
   display: flex;
   justify-content: space-between;
-  padding: 10px 100px;
+  padding: 10px 20px;
 }
 
 .container {
@@ -14,6 +14,7 @@
   width: 100%;
   top: 0;
   transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px #533b0b;
 }
 .sticky {
   width: 100%;
@@ -28,7 +29,7 @@ a {
 .loginPart {
   display: flex;
   justify-content: space-between;
-  padding: 10px 100px;
+  padding: 10px 20px;
   background-color: #0d141e;
 }
 .cartContainer {
@@ -362,6 +363,35 @@ span {
 .toggleIconContainer {
   display: none;
 }
+/* flag section */
+.flags {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  z-index: 3;
+  font-size: 25px;
+  box-sizing: border-box;
+}
+.flag1:hover,
+.flag2:hover {
+  z-index: 3;
+  font-size: 30px;
+  box-sizing: border-box;
+}
+.flag1 .selected,
+.flag2 .selected {
+  font-size: 35px;
+}
+.flag1,
+.flag2 {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  transition: 0.3s all;
+  width: 50px;
+}
+
 @media (max-width: 1320px) {
   .arrowright img,
   .arrowleft img {
@@ -392,9 +422,6 @@ span {
     display: flex;
     padding: 0;
   }
-  .userIcon {
-    display: none;
-  }
 }
 
 @media (max-width: 835px) {
@@ -405,6 +432,9 @@ span {
 }
 @media (max-width: 500px) {
   .items {
+    display: none;
+  }
+  .userIcon {
     display: none;
   }
   .toggleIconContainer {

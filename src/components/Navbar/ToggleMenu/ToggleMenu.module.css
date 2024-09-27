@@ -9,10 +9,22 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  /* position: fixed; */
   padding-top: 50px;
   gap: 70px;
-  /* top: 0; */
+}
+.container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 300px;
+  background-image: url("https://harrypottershop.co.uk/cdn/shop/t/22/assets/menu-light.png");
+  background-position: 50% calc(100% - 170px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding-top: 50px;
+  gap: 70px;
 }
 
 .liItems {
@@ -104,6 +116,10 @@
   top: -5px;
 }
 .container hr {
+  width: 250px;
+  border: solid 0.2px grey;
+}
+.container2 hr {
   width: 250px;
   border: solid 0.2px grey;
 }

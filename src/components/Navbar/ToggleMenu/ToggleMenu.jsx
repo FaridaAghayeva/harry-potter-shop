@@ -1,11 +1,16 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import style from "../ToggleMenu/ToggleMenu.module.css";
 import { FaUser } from "react-icons/fa";
+import { ThemeContext } from "../../../components/ContextAPIs/Theme/Theme";
+import { useTranslation } from "react-i18next";
 export default function ToggleMenu({ isVisible, setVisible }) {
   const nodeRef = useRef();
   const [isOpen, setOpen] = useState(false);
-  const toggleNav = () => setOpen(!isOpen)
+  const toggleNav = () => setOpen(!isOpen);
+  const { darkMode } = useContext(ThemeContext);
+  const { t } = useTranslation();
+
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (!nodeRef.current.contains(e.target)) {
@@ -23,43 +28,33 @@ export default function ToggleMenu({ isVisible, setVisible }) {
     setVisible(!isVisible);
   }
   return (
-    <div className={style.container} ref={nodeRef}>
+    <div
+      className={darkMode === "light" ? style.container : style.container2}
+      ref={nodeRef}
+    >
       <div className={style.liItems}>
         <NavLink to="/" onClick={clickPage}>
-          <span>Home</span>
+          <span>{t("header.home")}</span>
         </NavLink>
         <hr></hr>
         <NavLink to="/about-us" onClick={clickPage}>
-          <span>About Us</span>
+          <span>{t("header.about")}</span>
         </NavLink>
         <hr></hr>
-        <NavLink to="/blogs" onClick={clickPage}>
-          <span>Blogs</span>
-        </NavLink>
-        <hr></hr>
+
         <NavLink to="/products" onClick={clickPage}>
-          <span>Products</span>
+          <span>{t("header.shop")}</span>
         </NavLink>
         <hr></hr>
         <NavLink to="/contact-us" onClick={clickPage}>
-          <span>Contact Us</span>
+          <span>{t("header.contact")}</span>
         </NavLink>
         <hr></hr>
         <NavLink to="/profile">
           <div className={style.userIcon} onClick={clickPage}>
-            <FaUser /> Profile
+            <FaUser /> {t("header.profile")}
           </div>
         </NavLink>
-      </div>
-      <div>
-        <div className={style.logo}>
-          <img src="https://harrypottershop.co.uk/cdn/shop/t/22/assets/logo_hp_fan_club.png?v=181701325036633612841678387974" />
-        </div>
-        <div className={`${style.loginBtn} ${style.btn}`} onClick={clickPage}>
-          <NavLink to="/login">
-            <span>LOGIN</span>
-          </NavLink>
-        </div>
       </div>
     </div>
   );

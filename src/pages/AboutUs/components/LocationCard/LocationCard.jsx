@@ -1,11 +1,14 @@
 import React from "react";
-import style from "../LocSection/LocSection.module.css"; 
+import style from "../LocSection/LocSection.module.css";
+import { useTranslation } from "react-i18next";
 
 const LocationCard = ({ imageSrc, description, coordinates }) => {
+  const { t } = useTranslation();
+
   const handleClick = () => {
     const [latitude, longitude] = coordinates;
     const url = `https://www.google.com/maps?q=${latitude},${longitude}`;
-    window.open(url, "_blank"); 
+    window.open(url, "_blank");
   };
 
   return (

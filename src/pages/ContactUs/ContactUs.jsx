@@ -6,15 +6,16 @@ import { toast } from "react-toastify";
 import supabase from "../../supabase";
 import { useCookies } from "react-cookie";
 import { ThemeContext } from "../../components/ContextAPIs/Theme/Theme";
+import { useTranslation } from "react-i18next";
 
 export default function ContactUs() {
   const { darkMode } = useContext(ThemeContext);
-  const paths = [
-    { name: "Home", url: "/" },
-    { name: "Contact Us", url: "/contact-us" },
-  ];
+  // const paths = [
+  //   { name: "Home", url: "/" },
+  //   { name: "Contact Us", url: "/contact-us" },
+  // ];
   const [cookie] = useCookies(["cookie-user"]);
-
+  const { t } = useTranslation();
   const [formdata, setFormdata] = useState({
     firstname: "",
     lastname: "",
@@ -52,14 +53,14 @@ export default function ContactUs() {
 
   return (
     <div className={style.container}>
-      <div className={style.path}>
+      {/* <div className={style.path}>
         <NavLink>
           <Breadcrumb paths={paths} />
         </NavLink>
-      </div>
+      </div> */}
 
       <h1 className={darkMode === "light" ? style.title : style.titleLight}>
-        Contact Us
+        {t("contact-us.contact-us")}
       </h1>
 
       <div
@@ -68,16 +69,12 @@ export default function ContactUs() {
         }
       >
         <div className={style.inside}>
-          <p className={style.text1}>
-            Orders made with standard shipping can take&nbsp;2-3 days to be
-            processed and dispatched. Please then allow additional time for
-            delivery.
-          </p>
+          <p className={style.text1}>{t("contact-us.text1")}</p>
           <p className={style.text2}>
             <i>
-              Please do check our
-              <NavLink to="/faq"> FAQ section </NavLink>
-              prior to contacting us to see if your question has been answered.
+              {t("contact-us.text2")}
+              <NavLink to="/faq"> {t("contact-us.text3")} </NavLink>
+              {t("contact-us.text4")}
             </i>
           </p>
           <form
@@ -90,7 +87,7 @@ export default function ContactUs() {
             <div
               className={darkMode === "light" ? style.name : style.nameLight}
             >
-              <label for="firstname">First Name</label>
+              <label for="firstname">{t("contact-us.firstname")}</label>
               <input
                 type="text"
                 name="firstname"
@@ -105,7 +102,7 @@ export default function ContactUs() {
                 darkMode === "light" ? style.surname : style.surnameLight
               }
             >
-              <label for="lastname">Last Name</label>
+              <label for="lastname">{t("contact-us.surname")}</label>
               <input
                 type="text"
                 name="lastname"
@@ -118,7 +115,7 @@ export default function ContactUs() {
             <div
               className={darkMode === "light" ? style.email : style.emailLight}
             >
-              <label for="email">Email</label>
+              <label for="email">{t("contact-us.email")}</label>
               <input
                 type="text"
                 name="email"
@@ -133,7 +130,7 @@ export default function ContactUs() {
                 darkMode === "light" ? style.message : style.messageLight
               }
             >
-              <label for="message">Message</label>
+              <label for="message">{t("contact-us.message")}</label>
               <textarea
                 type="text"
                 name="message"
@@ -145,7 +142,7 @@ export default function ContactUs() {
             </div>
             <div className={style.btnContainer}>
               <button className={style.btn} type="submit">
-                SEND MESSAGE
+                {t("contact-us.send-message")}
               </button>
             </div>
           </form>

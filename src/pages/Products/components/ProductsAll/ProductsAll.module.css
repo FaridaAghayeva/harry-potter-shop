@@ -312,6 +312,12 @@
   color: #4a2b10;
   cursor: pointer;
 }
+.collection__total {
+  color: #fcf5e7;
+}
+.collection__totalLight {
+  color: #4a2b10;
+}
 @media (max-width: 800px) {
   .sortingAndFiltering {
     display: none;
@@ -341,29 +347,20 @@
     height: fit-content;
     width: 250px;
   }
-  .image img {
-    width: 250px;
-  }
+
   .details {
     width: 250px;
   }
-  .container {
-    width: 250px;
-    height: fit-content;
-  }
-  .btn {
-    width: 100px;
-  }
+
   .title {
     font-size: 20px;
     height: 80px;
   }
-  .price {
-    padding: 20px;
-  }
+
   .textContainerResp {
     padding: 50px;
   }
+
   .toggleFilterBtn {
     display: flex;
     font-weight: bold;
@@ -382,7 +379,7 @@
     align-items: center;
     width: 150px;
     padding: 10px 15px;
-
+    width: fit-content;
     position: relative;
   }
   .toggleFilterBtn:after {

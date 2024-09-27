@@ -11,8 +11,24 @@
   flex-direction: column;
   gap: 30px;
   padding-top: 50px;
+  color: #fcf5e7;
 }
-
+.sortingAndFilteringLight {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fcf5e7;
+  height: 100vh;
+  width: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 50px;
+  color: #4a2b10;
+  box-shadow: 1px 5px 5px #4a2b10;
+}
 .sortContainer,
 .sorts,
 .filterContainer {

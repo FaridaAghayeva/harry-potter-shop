@@ -105,3 +105,8 @@
   bottom: 0;
   left: 100%;
 }
+@media (max-width: 500px) {
+  .addbtn {
+    margin-left: -20px;
+  }
+}
